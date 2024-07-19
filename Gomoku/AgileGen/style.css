@@ -1,0 +1,20 @@
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(15, 20px);
+    grid-template-rows: repeat(15, 20px);
+}
+
+.cell {
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+}
+
+.black {
+    background-color: black;
+}
+
+.white {
+    background-color: gray;
+}

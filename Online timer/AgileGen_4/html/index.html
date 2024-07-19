@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer Control Panel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Timer Management</h1>
+            <p>Efficiently manage your time-bound activities.</p>
+        </header>
+        <section class="timer-setup">
+            <label for="duration">Enter Duration in Minutes:</label>
+            <input type="number" id="duration" min="1" max="1440">
+            <button id="set">Set</button>
+            <div id="feedback"></div>
+        </section>
+        <section class="timer-display">
+            <div id="timer">00:00:00</div>
+            <button id="start">Start</button>
+            <button id="stop">Stop</button>
+            <button id="reset">Reset</button>
+        </section>
+        <footer>
+            <p>Brief instructions on how to use the timer interface.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

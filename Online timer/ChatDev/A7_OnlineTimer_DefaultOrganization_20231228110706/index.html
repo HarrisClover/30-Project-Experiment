@@ -1,0 +1,21 @@
+<!--
+This is the HTML template for our web page.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Timer</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</head>
+<body>
+    <h1>Timer</h1>
+    <form id="timer-form">
+        <label for="duration">Duration (in seconds):</label>
+        <input type="number" id="duration" name="duration" required>
+        <button type="submit">Start</button>
+        <button type="button" id="stop-button">Stop</button>
+    </form>
+    <div id="timer-status"></div>
+</body>
+</html>

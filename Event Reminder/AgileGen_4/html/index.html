@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Reminder Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Event Manager</div>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showAddEvent()">Add Event</a></li>
+                <li><a href="#" onclick="showMyEvents()">My Events</a></li>
+                <li><a href="#" onclick="showCalendar()">My Calendar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="mainContent">
+        <!-- Add Event Section -->
+        <div id="addEvent" class="content-section">
+            <h2>Add Event</h2>
+            <form id="eventForm">
+                <input type="text" id="eventName" placeholder="Event Name" required>
+                <input type="date" id="eventDate" required>
+                <input type="time" id="eventTime" required>
+                <input type="text" id="eventLocation" placeholder="Location" required>
+                <button type="button" onclick="addEvent()">Set Reminder</button>
+            </form>
+            <p id="confirmationMessage"></p>
+        </div>
+
+        <!-- My Events Section -->
+        <div id="myEvents" class="content-section" style="display:none;">
+            <h2>My Events</h2>
+            <ul id="eventsList"></ul>
+        </div>
+
+        <!-- My Calendar Section -->
+        <div id="myCalendar" class="content-section" style="display:none;">
+            <h2>My Calendar</h2>
+            <div id="calendarView"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Contact us at <a href="mailto:support@eventmanager.com">support@eventmanager.com</a></p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

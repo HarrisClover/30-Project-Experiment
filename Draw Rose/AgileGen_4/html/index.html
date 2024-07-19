@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artistic Flora - Flower Drawing Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Artistic Flora</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#tutorials">Tutorials</a></li>
+                <li><a href="#about">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="drawing-area">
+            <canvas id="canvas"></canvas>
+            <div class="tools">
+                <select id="flowerSelector">
+                    <option value="rose">Rose</option>
+                    <option value="tulip">Tulip</option>
+                    <option value="daisy">Daisy</option>
+                </select>
+                <button id="undo">Undo</button>
+                <button id="redo">Redo</button>
+                <button id="save">Save</button>
+                <button id="share">Share</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Contact us at info@artisticflora.com</p>
+        <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

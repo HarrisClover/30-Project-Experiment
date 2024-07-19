@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Translator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Online Translator</div>
+        <nav>
+            <ul>
+                <li><a href="#translation">Translation</a></li>
+                <li><a href="#history">History</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="translation">
+        <section class="text-input-area">
+            <textarea id="sourceText" placeholder="Enter text here..."></textarea>
+            <select id="sourceLang">
+                <option value="">Detect Language</option>
+            </select>
+            <button onclick="detectLanguage()">Detect Language</button>
+        </section>
+        <section class="translation-controls">
+            <select id="targetLang">
+                <option value="en">English</option>
+                <option value="es">Spanish</option>
+                <option value="fr">French</option>
+            </select>
+            <button onclick="translateText()">Translate</button>
+        </section>
+        <section class="output-area">
+            <textarea id="translatedText" readonly></textarea>
+        </section>
+        <section class="history-section">
+            <button onclick="toggleHistory()">History</button>
+            <div id="translationHistory" class="translation-history-panel"></div>
+        </section>
+    </main>
+    <footer>
+        <p>Contact Information | Privacy Policy | Terms of Service</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
