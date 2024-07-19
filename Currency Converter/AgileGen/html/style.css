@@ -1,0 +1,82 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f2f2f2;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+main {
+    padding: 20px;
+}
+
+.currency-conversion {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.currency-conversion h1 {
+    margin-bottom: 20px;
+}
+
+.currency-conversion form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.currency-conversion input,
+.currency-conversion select {
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.currency-conversion button {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#result {
+    font-weight: bold;
+}
+
+footer {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+}
+
+.links a {
+    text-decoration: none;
+    color: #333;
+}

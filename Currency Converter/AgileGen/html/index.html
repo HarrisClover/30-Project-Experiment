@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Currency Converter</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Currency Converter Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="currency-conversion">
+            <h1>Currency Conversion</h1>
+            <form id="conversion-form">
+                <input type="number" id="amount" placeholder="Enter amount">
+                <select id="source-currency">
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <!-- Add more currency options here -->
+                </select>
+                <select id="target-currency">
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <!-- Add more currency options here -->
+                </select>
+                <button type="button" onclick="convert()">Convert</button>
+            </form>
+            <div id="result"></div>
+        </div>
+    </main>
+    <footer>
+        <div class="copyright">
+            &copy; 2021 Currency Converter. All rights reserved.
+        </div>
+        <div class="links">
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        </div>
+    </footer>
+</body>
+</html>

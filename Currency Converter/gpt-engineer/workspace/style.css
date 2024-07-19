@@ -1,0 +1,16 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.converter {
+    margin-top: 50px;
+}
+
+#amount, #from, #to {
+    margin: 10px;
+}
+
+#result {
+    margin-top: 50px;
+    font-size: 24px;
+}

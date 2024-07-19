@@ -1,0 +1,26 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-align: center;
+}
+
+#currency-form {
+    max-width: 300px;
+    margin: auto;
+}
+
+#currency-form div {
+    margin-bottom: 10px;
+}
+
+#result {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.5em;
+}
