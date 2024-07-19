@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bookkeeping Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Company Logo">
+            <h1>Bookkeeping Assistant</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#categorizing-transactions">Categorizing Transactions</a></li>
+                <li><a href="#creating-an-invoice">Creating an Invoice</a></li>
+                <li><a href="#tracking-expenses">Tracking Expenses</a></li>
+                <li><a href="#generating-a-report">Generating a Report</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="cta">Get Started</a>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>Welcome to Bookkeeping Assistant</h2>
+            <p>Our bookkeeping assistant helps you complete your daily bookkeeping work with ease. Choose from our range of features to get started.</p>
+        </section>
+
+        <section id="categorizing-transactions">
+            <h2>Categorizing Transactions</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th>Transaction</th>
+                        <th>Suggested Category</th>
+                        <th>Edit Category</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Transaction 1</td>
+                        <td>Category 1</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Transaction 2</td>
+                        <td>Category 2</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Transaction 3</td>
+                        <td>Category 3</td>
+                        <td><input type="text"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button>Save</button>
+        </section>
+
+        <section id="creating-an-invoice">
+            <h2>Creating an Invoice</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th>Service/Product</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Service/Product 1</td>
+                        <td>$10.00</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Service/Product 2</td>
+                        <td>$20.00</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Service/Product 3</td>
+                        <td>$30.00</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="invoice">
+                <h3>Invoice</h3>
+                <p>Service/Product 1 - $10.00</p>
+                <p>Service/Product 2 - $20.00</p>
+                <p>Service/Product 3 - $30.00</p>
+                <hr>
+                <p>Subtotal - $60.00</p>
+                <p>Tax - $6.00</p>
+                <p>Total - $66.00</p>
+            </div>
+            <button>Edit Invoice Details</button>
+            <button>Save</button>
+        </section>
+
+        <section id="tracking-expenses">
+            <h2>Tracking Expenses</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th>Expense</th>
+                        <th>Suggested Category</th>
+                        <th>Edit Category</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Expense 1</td>
+                        <td>Category 1</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Expense 2</td>
+                        <td>Category 2</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Expense 3</td>
+                        <td>Category 3</td>
+                        <td><input type="text"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button>Save</button>
+        </section>
+
+        <section id="generating-a-report">
+            <h2>Generating a Report</h2>
+            <form>
+                <label for="start-date">Start Date:</label>
+                <input type="date" id="start-date" name="start-date">
+                <label for="end-date">End Date:</label>
+                <input type="date" id="end-date" name="end-date">
+                <button>Generate Report</button>
+            </form>
+            <div class="report">
+                <h3>Report</h3>
+                <p>Total Income - $100.00</p>
+                <p>Total Expenses - $50.00</p>
+                <p>Total Profit - $50.00</p>
+            </div>
+            <button>Download Report</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

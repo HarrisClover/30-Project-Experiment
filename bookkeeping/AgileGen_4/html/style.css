@@ -1,0 +1,77 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header, footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+header .logo {
+    float: left;
+}
+
+header nav {
+    display: inline-block;
+}
+
+header .user-profile {
+    float: right;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+form input, form select, form button {
+    padding: 10px;
+    margin-top: 5px;
+}
+
+button {
+    cursor: pointer;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+#feedback-message {
+    color: red;
+    margin-top: 10px;
+}
+
+#report-results p {
+    margin-top: 10px;
+}

@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookkeeping Assistant Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Bookkeeping Assistant</div>
+        <nav>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#transactions">Transactions</a>
+            <a href="#reports">Reports</a>
+            <a href="#settings">Settings</a>
+        </nav>
+        <div class="user-profile">John Doe <button onclick="logout()">Logout</button></div>
+    </header>
+
+    <main>
+        <section id="transaction-form">
+            <h2>Add New Transaction</h2>
+            <form onsubmit="addTransaction(event)">
+                <input type="date" id="date" required>
+                <input type="text" id="description" placeholder="Description" required>
+                <select id="category">
+                    <option value="Beverages">Beverages</option>
+                    <option value="Office">Office</option>
+                </select>
+                <input type="number" id="amount" placeholder="Amount" required>
+                <button type="submit">Submit</button>
+            </form>
+            <div id="feedback-message"></div>
+        </section>
+
+        <section id="transaction-history">
+            <h2>Recent Transactions</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody id="transactions-list"></tbody>
+            </table>
+        </section>
+
+        <section id="financial-report">
+            <h2>Generate Financial Report</h2>
+            <form onsubmit="generateReport(event)">
+                <input type="date" id="start-date" required>
+                <input type="date" id="end-date" required>
+                <button type="submit">Generate</button>
+            </form>
+            <div id="report-results">
+                <p>Total Income: <span id="total-income">0</span></p>
+                <p>Total Expenses: <span id="total-expenses">0</span></p>
+                <p>Net Profit/Loss: <span id="net-profit-loss">0</span></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Contact Information: support@bookkeepingassistant.com, +1234567890</p>
+        <a href="#terms">Terms of Service</a>
+        <a href="#privacy">Privacy Policy</a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

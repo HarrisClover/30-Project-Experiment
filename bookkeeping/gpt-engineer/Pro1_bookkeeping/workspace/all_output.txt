@@ -1,0 +1,116 @@
+Sure, I will create a simple bookkeeping assistant website using HTML, CSS, and JavaScript. The website will have a form to input transactions (income and expenses), a table to display the transactions, and a summary section to show the total income, total expenses, and balance.
+
+Here are the files we will need:
+
+1. index.html: This is the main HTML file that will contain the structure of the website.
+2. styles.css: This file will contain all the CSS styles for the website.
+3. script.js: This file will contain all the JavaScript code for the website.
+
+Let's start with the HTML file:
+
+index.html
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bookkeeping Assistant</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Bookkeeping Assistant</h1>
+    <form id="transaction-form">
+        <label for="type">Type:</label>
+        <select id="type">
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+        </select>
+        <label for="description">Description:</label>
+        <input type="text" id="description" required>
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" required>
+        <button type="submit">Add Transaction</button>
+    </form>
+    <table id="transaction-table">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <div id="summary">
+        <p>Total Income: <span id="total-income">0</span></p>
+        <p>Total Expense: <span id="total-expense">0</span></p>
+        <p>Balance: <span id="balance">0</span></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+Next, the CSS file:
+
+styles.css
+```css
+body {
+    font-family: Arial, sans-serif;
+}
+
+form {
+    margin-bottom: 1em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 0.5em;
+}
+
+#summary {
+    margin-top: 1em;
+}
+```
+
+Finally, the JavaScript file:
+
+script.js
+```javascript
+document.getElementById('transaction-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    var type = document.getElementById('type').value;
+    var description = document.getElementById('description').value;
+    var amount = parseFloat(document.getElementById('amount').value);
+
+    var table = document.getElementById('transaction-table').getElementsByTagName('tbody')[0];
+    var row = table.insertRow();
+    row.insertCell().innerText = type;
+    row.insertCell().innerText = description;
+    row.insertCell().innerText = amount;
+
+    var totalIncome = document.getElementById('total-income');
+    var totalExpense = document.getElementById('total-expense');
+    var balance = document.getElementById('balance');
+
+    if (type === 'income') {
+        totalIncome.innerText = parseFloat(totalIncome.innerText) + amount;
+    } else {
+        totalExpense.innerText = parseFloat(totalExpense.innerText) + amount;
+    }
+
+    balance.innerText = parseFloat(totalIncome.innerText) - parseFloat(totalExpense.innerText);
+
+    document.getElementById('transaction-form').reset();
+});
+```
+
+This concludes a fully working implementation.
