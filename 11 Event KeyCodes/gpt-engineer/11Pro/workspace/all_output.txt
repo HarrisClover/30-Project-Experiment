@@ -1,0 +1,66 @@
+Sure, I can help you with that. We will need three files for this task: `index.html` for the structure of the webpage, `styles.css` for the styling, and `script.js` for the JavaScript logic that will handle the keyboard events.
+
+Let's start with the HTML structure.
+
+index.html
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Key Event Display</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Key Event Display</h1>
+    <div id="output">
+        <p id="key">Key: </p>
+        <p id="keyCode">KeyCode: </p>
+        <p id="code">Code: </p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+```
+This HTML file creates a simple webpage with a title and three paragraphs to display the key, keyCode, and code of the keyboard event. It links to the CSS and JavaScript files we will create next.
+
+Now let's add some basic styling.
+
+styles.css
+```css
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+#output {
+    text-align: center;
+    font-size: 2em;
+}
+
+p {
+    margin: 0.5em 0;
+}
+```
+This CSS file centers the content on the page and applies some basic styling to the text.
+
+Finally, let's write the JavaScript logic to handle the keyboard events.
+
+script.js
+```javascript
+document.addEventListener('keydown', function(event) {
+    document.getElementById('key').textContent = 'Key: ' + event.key;
+    document.getElementById('keyCode').textContent = 'KeyCode: ' + event.keyCode;
+    document.getElementById('code').textContent = 'Code: ' + event.code;
+});
+```
+This JavaScript file adds an event listener to the document that listens for 'keydown' events. When a keydown event is fired, it updates the text content of the three paragraphs in the HTML to display the key, keyCode, and code of the event.
+
+To see this in action, you just need to open the `index.html` file in a web browser. When you press a key on your keyboard, you should see the key, keyCode, and code displayed on the webpage.
+
+This concludes a fully working implementation.

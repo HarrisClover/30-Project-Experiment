@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Online Users</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Online Users</h1>
+        <input type="text" id="searchInput" placeholder="Search by name or location" onkeyup="filterUsers()">
+        <ul id="userList">
+            <li data-name="John Doe" data-location="New York">John Doe - New York</li>
+            <li data-name="Jane Smith" data-location="Los Angeles">Jane Smith - Los Angeles</li>
+            <li data-name="Mike Johnson" data-location="Chicago">Mike Johnson - Chicago</li>
+            <li data-name="Emily Davis" data-location="Houston">Emily Davis - Houston</li>
+            <!-- Add more users as needed -->
+        </ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

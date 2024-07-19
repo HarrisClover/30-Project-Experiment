@@ -1,0 +1,26 @@
+'''
+This file contains the HTML template for the Testimonial Box Switcher website.
+'''
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Testimonial Box Switcher</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Testimonial Box Switcher</h1>
+    <div id="testimonial-box">
+        {% for testimonial in testimonials %}
+        <div class="testimonial">
+            <h3>{{ testimonial.name }}</h3>
+            <p>{{ testimonial.message }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    <form action="/add_testimonial_route" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <textarea name="message" placeholder="Your Testimonial" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

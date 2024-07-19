@@ -1,0 +1,40 @@
+'''
+This file contains the CSS styling for the Testimonial Box Switcher website.
+'''
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+h1 {
+    text-align: center;
+}
+#testimonial-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.testimonial {
+    width: 300px;
+    padding: 20px;
+    margin: 10px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+}
+form {
+    margin-top: 20px;
+    text-align: center;
+}
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

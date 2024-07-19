@@ -1,0 +1,46 @@
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  text-align: center;
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="text"] {
+  padding: 5px;
+  width: 200px;
+}
+
+button[type="submit"] {
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#errorContainer,
+#successContainer {
+  text-align: center;
+  margin-top: 20px;
+  display: none;
+}
+
+#errorContainer {
+  color: red;
+}
+
+#successContainer {
+  color: green;
+}

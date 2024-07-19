@@ -1,0 +1,1 @@
+The task is a web page that displays a field for entering a verification code. It prompts the user to enter a 6-digit code, which is sent to their email address 'cool_guy@email.com' to confirm the email address.

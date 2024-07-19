@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Joke Generator</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#get-joke-btn').click(function() {
+                $.get('/get_joke', function(data) {
+                    $('#joke').text(data.joke);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Joke Generator</h1>
+    <button id="get-joke-btn">Get Another Joke</button>
+    <div id="joke"></div>
+</body>
+</html>

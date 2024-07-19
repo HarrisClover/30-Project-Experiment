@@ -1,0 +1,35 @@
+body {
+    background-color: white;
+    color: black;
+}
+
+body.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+#clock {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    border-radius: 50%;
+    position: relative;
+}
+
+#clock::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 100px;
+    background-color: black;
+    top: 50px;
+    left: 50%;
+    transform: rotate(0deg);
+    transform-origin: bottom;
+}
+
+body.dark-mode #clock,
+body.dark-mode #clock::before {
+    border-color: white;
+    background-color: white;
+}

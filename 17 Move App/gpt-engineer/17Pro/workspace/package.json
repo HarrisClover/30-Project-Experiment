@@ -1,0 +1,23 @@
+{
+  "name": "movie-streaming-service",
+  "version": "1.0.0",
+  "description": "A user interface for a movie streaming service",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/movie-streaming-service.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yourusername/movie-streaming-service/issues"
+  },
+  "homepage": "https://github.com/yourusername/movie-streaming-service#readme",
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "bootstrap": "^4.5.0"
+  }
+}

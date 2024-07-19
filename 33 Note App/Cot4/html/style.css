@@ -1,0 +1,25 @@
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+#app {
+    width: 500px;
+    margin: 0 auto;
+}
+
+#noteInput {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#notesContainer {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.note {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}

@@ -1,0 +1,104 @@
+To implement this, we will need a web application with a front-end and a back-end. The front-end will be responsible for displaying the options to the user and collecting their feedback. The back-end will process the feedback and store it in a database.
+
+Here is a high-level overview of the architecture:
+
+1. Front-end: HTML, CSS, and JavaScript for the user interface.
+2. Back-end: Python Flask web server to handle HTTP requests and responses.
+3. Database: SQLite to store the feedback data.
+
+Let's start with the entry point of our application, the Python Flask server.
+
+src/app.py
+```python
+from flask import Flask, render_template, request, redirect, url_for
+from database import init_db, db_session
+from models import Feedback
+
+app = Flask(__name__)
+init_db()
+
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    if request.method == 'POST':
+        feedback = request.form.get('feedback')
+        new_feedback = Feedback(feedback)
+        db_session.add(new_feedback)
+        db_session.commit()
+        return redirect(url_for('index'))
+    return render_template('index.html')
+
+if __name__ == "__main__":
+    app.run(debug=True)
+```
+
+Next, let's define the database initialization and session management.
+
+src/database.py
+```python
+from sqlalchemy import create_engine
+from sqlalchemy.orm import scoped_session, sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
+
+engine = create_engine('sqlite:///feedback.db', convert_unicode=True)
+db_session = scoped_session(sessionmaker(autocommit=False,
+                                         autoflush=False,
+                                         bind=engine))
+Base = declarative_base()
+Base.query = db_session.query_property()
+
+def init_db():
+    import models
+    Base.metadata.create_all(bind=engine)
+```
+
+Now, let's define the Feedback model.
+
+src/models.py
+```python
+from sqlalchemy import Column, Integer, String
+from database import Base
+
+class Feedback(Base):
+    __tablename__ = 'feedback'
+    id = Column(Integer, primary_key=True)
+    feedback = Column(String(50))
+
+    def __init__(self, feedback=None):
+        self.feedback = feedback
+```
+
+Finally, let's create the front-end HTML file.
+
+templates/index.html
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Feedback</title>
+</head>
+<body>
+    <h1>Customer Feedback</h1>
+    <form method="POST">
+        <input type="radio" id="unhappy" name="feedback" value="Unhappy">
+        <label for="unhappy">Unhappy</label><br>
+        <input type="radio" id="neutral" name="feedback" value="Neutral">
+        <label for="neutral">Neutral</label><br>
+        <input type="radio" id="satisfied" name="feedback" value="Satisfied">
+        <label for="satisfied">Satisfied</label><br>
+        <input type="submit" value="Send Review">
+    </form>
+</body>
+</html>
+```
+
+We also need to create a requirements.txt file to specify the Python dependencies.
+
+requirements.txt
+```
+Flask==1.1.2
+SQLAlchemy==1.3.23
+```
+
+To run the application, you would first install the dependencies with `pip install -r requirements.txt`, then run the Flask server with `python src/app.py`.
+
+This concludes a fully working implementation.

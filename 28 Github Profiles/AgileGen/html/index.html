@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github User Search</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="homepage">
+    <header>
+        <h1>Github User Search</h1>
+    </header>
+    <main>
+        <input type="text" id="username" placeholder="Enter Github username">
+        <button id="search">Search</button>
+    </main>
+    <footer>
+        <p>&copy; 2023 - Github User Search</p>
+        <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">LinkedIn</a></li>
+        </ul>
+    </footer>
+</div>
+
+<div id="user-profile" class="hidden">
+    <header>
+        <button id="back">Back</button>
+        <h1>Github User Search</h1>
+    </header>
+    <main>
+        <img id="profile-pic" alt="User's profile picture">
+        <h2 id="name"></h2>
+        <p id="location"></p>
+        <p id="bio"></p>
+        <p id="repository-count"></p>
+        <ul id="repository-list"></ul>
+    </main>
+    <footer>
+        <p>&copy; 2023 - Github User Search</p>
+        <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">LinkedIn</a></li>
+        </ul>
+    </footer>
+</div>
+
+<div id="error-page" class="hidden">
+    <header>
+        <button id="back-error">Back</button>
+        <h1>Github User Search</h1>
+    </header>
+    <main>
+        <p id="error-message"></p>
+    </main>
+    <footer>
+        <p>&copy; 2023 - Github User Search</p>
+        <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">LinkedIn</a></li>
+        </ul>
+    </footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

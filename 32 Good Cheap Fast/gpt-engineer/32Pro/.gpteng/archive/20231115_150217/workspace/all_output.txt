@@ -1,0 +1,91 @@
+To achieve this, we will use Python with Flask for the backend and HTML, CSS, and JavaScript for the frontend. We will also use jQuery UI for the sliding buttons.
+
+Let's start with the backend.
+
+First, we need to install Flask. Create a `requirements.txt` file and add Flask to it.
+
+requirements.txt
+```
+Flask==1.1.2
+```
+
+Next, we will create the main Flask application file.
+
+app.py
+```python
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+
+This is a simple Flask application with a single route that renders an HTML template.
+
+Next, let's create the HTML template.
+
+templates/index.html
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project Management Goals</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</head>
+<body>
+    <div id="quality-slider" class="slider"></div>
+    <div id="cost-slider" class="slider"></div>
+    <div id="time-slider" class="slider"></div>
+</body>
+</html>
+```
+
+This is a simple HTML page that includes the jQuery UI CSS and JavaScript files, as well as a custom JavaScript file that we will create next. It also includes three div elements that will be turned into sliders.
+
+Next, let's create the JavaScript file.
+
+static/main.js
+```javascript
+$(function() {
+    $(".slider").slider({
+        range: "min",
+        value: 50,
+        min: 0,
+        max: 100,
+        slide: function(event, ui) {
+            var total = 0;
+            $(".slider").not(this).each(function() {
+                total += $(this).slider("value");
+            });
+
+            if (total + ui.value > 100) {
+                return false;
+            }
+        }
+    });
+});
+```
+
+This JavaScript file uses jQuery UI to turn the div elements into sliders. It also includes a slide event handler that calculates the total value of the other sliders and prevents the current slider from being moved if the total value would exceed 100.
+
+Finally, let's create a CSS file to style the sliders.
+
+static/main.css
+```css
+.slider {
+    margin: 20px;
+    width: 200px;
+}
+```
+
+This CSS file simply adds some margin to the sliders and sets their width.
+
+This concludes a fully working implementation.

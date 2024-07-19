@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Drawing Application</h1>
+        <p>Brief description of the application's functionality.</p>
+    </header>
+    <section class="tool-section">
+        <label for="brush-size">Brush Size:</label>
+        <input type="range" id="brush-size" min="1" max="50" value="5">
+        <label for="color-picker">Color:</label>
+        <input type="color" id="color-picker" value="#000000">
+        <button id="clear-canvas">Clear Canvas</button>
+    </section>
+    <section class="canvas-section">
+        <canvas id="drawing-canvas"></canvas>
+    </section>
+    <footer>
+        <p>Basic information about the application.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+.loader-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    position: absolute;
+    animation: invert 1s linear infinite;
+}
+
+.triangle:first-child {
+    border-width: 50px 50px 0 0;
+    border-color: #ff6347 transparent transparent transparent;
+}
+
+.triangle:last-child {
+    border-width: 0 0 50px 50px;
+    border-color: transparent transparent #4682b4 transparent;
+    top: 50px;
+    left: 50px;
+}
+
+@keyframes invert {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+}

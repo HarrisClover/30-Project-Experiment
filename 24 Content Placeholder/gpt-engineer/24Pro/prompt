@@ -1,0 +1,1 @@
+A content placeholder with animation, where placeholder text is displayed before actual data is loaded. The animation effect creates a gradient background and moving gradient stripes over the placeholder text, providing a better user experience while waiting for the content to load.

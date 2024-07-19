@@ -1,0 +1,118 @@
+To implement this feature, we will need to create several files:
+
+1. index.html: This is the main HTML file that will contain the structure of our webpage.
+2. style.css: This file will contain all the CSS styles that will be applied to our webpage.
+3. script.js: This file will contain all the JavaScript code that will handle the user interactions and update the tracker.
+4. package.json: This file will contain all the dependencies of our project.
+
+Let's start with the entry point file:
+
+index.html
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Water Tracker</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>Water Tracker</h1>
+    <div id="glasses-container">
+        <!-- Glasses will be dynamically added here -->
+    </div>
+    <div id="tracker">
+        <p id="progress">0%</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+Next, we will create the CSS file:
+
+style.css
+```css
+body {
+    font-family: Arial, sans-serif;
+}
+
+#glasses-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.glass {
+    width: 100px;
+    height: 200px;
+    border: 1px solid #000;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#tracker {
+    width: 100%;
+    height: 20px;
+    border: 1px solid #000;
+    margin-top: 20px;
+}
+
+#progress {
+    width: 0;
+    height: 100%;
+    background-color: #00f;
+    text-align: center;
+    color: #fff;
+}
+```
+
+Now, let's create the JavaScript file:
+
+script.js
+```javascript
+// Number of glasses to drink per day
+const dailyGoal = 8;
+
+// Create glasses
+for (let i = 0; i < dailyGoal; i++) {
+    let glass = document.createElement('div');
+    glass.className = 'glass';
+    document.getElementById('glasses-container').appendChild(glass);
+}
+
+// Add click event to glasses
+let glasses = document.getElementsByClassName('glass');
+for (let i = 0; i < glasses.length; i++) {
+    glasses[i].addEventListener('click', function() {
+        this.style.backgroundColor = '#00f';
+        updateTracker();
+    });
+}
+
+// Update tracker
+function updateTracker() {
+    let drunkGlasses = document.querySelectorAll('.glass[style*="background-color"]');
+    let progress = (drunkGlasses.length / dailyGoal) * 100;
+    document.getElementById('progress').style.width = progress + '%';
+    document.getElementById('progress').textContent = Math.round(progress) + '%';
+}
+```
+
+Finally, we will create the package.json file:
+
+package.json
+```json
+{
+  "name": "water-tracker",
+  "version": "1.0.0",
+  "description": "A simple water tracker",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
+```
+
+This concludes a fully working implementation.

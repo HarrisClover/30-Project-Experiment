@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch the Insect Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="start-screen">
+            <h1>Catch the Insect</h1>
+            <button id="start-btn">Start Game</button>
+        </div>
+        <div class="insect-selection hidden">
+            <h2>Select an Insect</h2>
+            <div class="insects">
+                <button class="insect-btn" data-insect="fly">Fly</button>
+                <button class="insect-btn" data-insect="mosquito">Mosquito</button>
+                <button class="insect-btn" data-insect="spider">Spider</button>
+            </div>
+        </div>
+        <div class="game-screen hidden">
+            <div class="header">
+                <h3>Time: <span id="time">00:00</span></h3>
+                <h3>Score: <span id="score">0</span></h3>
+            </div>
+            <div class="game-area" id="game-area"></div>
+        </div>
+        <div class="message hidden">
+            <h2>Congratulations! You reached the score threshold!</h2>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

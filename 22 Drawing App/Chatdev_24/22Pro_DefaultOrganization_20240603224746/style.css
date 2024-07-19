@@ -1,0 +1,28 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+canvas {
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+#controls {
+    margin-top: 10px;
+    text-align: center;
+}
+#controls label {
+    margin-right: 5px;
+}
+#controls input[type="range"] {
+    width: 200px;
+}
+#controls input[type="color"] {
+    margin-left: 5px;
+}
+#controls button {
+    margin-left: 10px;
+}

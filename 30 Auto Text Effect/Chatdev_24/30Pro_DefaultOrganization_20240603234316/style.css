@@ -1,0 +1,11 @@
+#textDisplay {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 100px;
+    animation: changeText linear infinite;
+}
+@keyframes changeText {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}

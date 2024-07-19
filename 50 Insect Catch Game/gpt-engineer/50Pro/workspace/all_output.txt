@@ -1,0 +1,141 @@
+The architecture of the game will be divided into several files:
+
+1. main.py: This is the entry point of the game. It initializes the game window, handles user input, and controls the game loop.
+
+2. game.py: This file contains the Game class which encapsulates the game logic. It is responsible for creating and managing the game objects (insects), updating the game state, and checking the game conditions (e.g., whether the player has reached the score threshold).
+
+3. insect.py: This file contains the Insect class which represents an insect in the game. Each insect has properties such as its position, type, and whether it has been caught by the player.
+
+4. timer.py: This file contains the Timer class which is used to keep track of the game time.
+
+5. score.py: This file contains the Score class which is used to keep track of the player's score.
+
+6. requirements.txt: This file lists the Python packages that are required to run the game.
+
+Let's start with the main.py file:
+
+main.py
+```python
+import pygame
+from game import Game
+
+def main():
+    pygame.init()
+
+    screen = pygame.display.set_mode((800, 600))
+    pygame.display.set_caption("Catch the Insect")
+
+    game = Game(screen)
+
+    clock = pygame.time.Clock()
+
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                return
+
+        game.update()
+        game.draw()
+
+        pygame.display.flip()
+        clock.tick(60)
+
+if __name__ == "__main__":
+    main()
+```
+
+Next, let's implement the Game class in the game.py file:
+
+game.py
+```python
+import pygame
+from insect import Insect
+from timer import Timer
+from score import Score
+
+class Game:
+    def __init__(self, screen):
+        self.screen = screen
+        self.insects = pygame.sprite.Group()
+        self.timer = Timer()
+        self.score = Score()
+
+    def update(self):
+        self.timer.update()
+        self.score.update(self.insects)
+        self.insects.update()
+
+    def draw(self):
+        self.screen.fill((255, 255, 255))
+        self.insects.draw(self.screen)
+        self.timer.draw(self.screen)
+        self.score.draw(self.screen)
+```
+
+Now, let's implement the Insect class in the insect.py file:
+
+insect.py
+```python
+import pygame
+import random
+
+class Insect(pygame.sprite.Sprite):
+    def __init__(self):
+        super().__init__()
+        self.image = pygame.image.load("insect.png")
+        self.rect = self.image.get_rect()
+        self.rect.x = random.randint(0, 800)
+        self.rect.y = random.randint(0, 600)
+
+    def update(self):
+        if pygame.mouse.get_pressed()[0] and self.rect.collidepoint(pygame.mouse.get_pos()):
+            self.kill()
+```
+
+Next, let's implement the Timer class in the timer.py file:
+
+timer.py
+```python
+import pygame
+
+class Timer:
+    def __init__(self):
+        self.font = pygame.font.Font(None, 36)
+        self.start_ticks = pygame.time.get_ticks()
+
+    def update(self):
+        pass
+
+    def draw(self, screen):
+        elapsed_time = (pygame.time.get_ticks() - self.start_ticks) / 1000
+        text = self.font.render(f"Time: {elapsed_time:.1f}", True, (0, 0, 0))
+        screen.blit(text, (10, 10))
+```
+
+Next, let's implement the Score class in the score.py file:
+
+score.py
+```python
+import pygame
+
+class Score:
+    def __init__(self):
+        self.font = pygame.font.Font(None, 36)
+        self.score = 0
+
+    def update(self, insects):
+        self.score += len(insects)
+
+    def draw(self, screen):
+        text = self.font.render(f"Score: {self.score}", True, (0, 0, 0))
+        screen.blit(text, (10, 50))
+```
+
+Finally, let's create the requirements.txt file:
+
+requirements.txt
+```
+pygame==2.0.1
+```
+
+This concludes a fully working implementation.

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Users</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function search() {
+            var query = $('#search').val();
+            $.post('/users', {query: query}, function(data) {
+                $('#users').empty();
+                $.each(data, function(i, user) {
+                    $('#users').append('<li>' + user.name + ' (' + user.location + ')</li>');
+                });
+            });
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="search" onkeyup="search()">
+    <ul id="users"></ul>
+</body>
+</html>

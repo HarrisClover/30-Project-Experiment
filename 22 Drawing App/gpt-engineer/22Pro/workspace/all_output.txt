@@ -1,0 +1,78 @@
+Sure, I will create a simple HTML5 canvas-based drawing application using JavaScript. The application will include the following features:
+
+1. Drawing on the canvas with a brush.
+2. Adjusting the brush size.
+3. Selecting brush colors.
+4. Clearing the canvas.
+
+Here is the code:
+
+index.html
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canvas Drawing App</title>
+    <style>
+        #canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Canvas Drawing App</h1>
+    <label for="brushSize">Brush Size:</label>
+    <input type="range" id="brushSize" min="1" max="50" value="10">
+    <label for="colorPicker">Color:</label>
+    <input type="color" id="colorPicker" value="#000000">
+    <button id="clearCanvas">Clear Canvas</button>
+    <canvas id="canvas" width="800" height="600"></canvas>
+    <script src="app.js"></script>
+</body>
+</html>
+```
+
+app.js
+```javascript
+window.onload = function() {
+    var canvas = document.getElementById('canvas');
+    var context = canvas.getContext('2d');
+
+    var painting = false;
+
+    function startDraw(e) {
+        painting = true;
+        draw(e);
+    }
+
+    function endDraw() {
+        painting = false;
+        context.beginPath();
+    }
+
+    function draw(e) {
+        if (!painting) return;
+        context.lineWidth = document.getElementById('brushSize').value;
+        context.lineCap = 'round';
+        context.strokeStyle = document.getElementById('colorPicker').value;
+
+        context.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+        context.stroke();
+        context.beginPath();
+        context.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+    }
+
+    function clearCanvas() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    canvas.addEventListener('mousedown', startDraw);
+    canvas.addEventListener('mouseup', endDraw);
+    canvas.addEventListener('mousemove', draw);
+    document.getElementById('clearCanvas').addEventListener('click', clearCanvas);
+}
+```
+
+In this application, the HTML file creates a canvas and some controls for the brush size, color, and a button to clear the canvas. The JavaScript file adds functionality to these controls and the canvas. It sets up event listeners for mouse events to start drawing, stop drawing, and draw on the canvas. It also sets up an event listener for the clear button to clear the canvas.
+
+This concludes a fully working implementation.

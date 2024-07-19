@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Section</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="faq-container">
+        <div class="faq-card">
+            <div class="faq-question" onclick="toggleAnswer(this)">
+                <span>What is your return policy?</span>
+                <span class="arrow">&#9660;</span>
+            </div>
+            <div class="faq-answer">
+                <p>Our return policy lasts 30 days...</p>
+            </div>
+        </div>
+        <div class="faq-card">
+            <div class="faq-question" onclick="toggleAnswer(this)">
+                <span>How do I track my order?</span>
+                <span class="arrow">&#9660;</span>
+            </div>
+            <div class="faq-answer">
+                <p>You can track your order by...</p>
+            </div>
+        </div>
+        <!-- Add more FAQ cards as needed -->
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

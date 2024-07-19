@@ -1,0 +1,286 @@
+The web page for a user would be to select one of the three options (Unhappy, Neutral, Satisfied) that best represents their level of satisfaction with the customer support they received and then click on "Send Review" to submit their feedback.===============================
+Certainly! Below is a simple HTML example of a web page where a user can select their level of satisfaction with customer support and submit their feedback:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Support Feedback</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .feedback-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .feedback-container h1 {
+            margin-bottom: 20px;
+        }
+        .feedback-container label {
+            display: block;
+            margin: 10px 0;
+        }
+        .feedback-container input[type="radio"] {
+            margin-right: 10px;
+        }
+        .feedback-container button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: #fff;
+            cursor: pointer;
+        }
+        .feedback-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="feedback-container">
+        <h1>Customer Support Feedback</h1>
+        <form id="feedbackForm">
+            <label>
+                <input type="radio" name="satisfaction" value="Unhappy" required>
+                Unhappy
+            </label>
+            <label>
+                <input type="radio" name="satisfaction" value="Neutral">
+                Neutral
+            </label>
+            <label>
+                <input type="radio" name="satisfaction" value="Satisfied">
+                Satisfied
+            </label>
+            <button type="submit">Send Review</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const satisfaction = formData.get('satisfaction');
+            alert(`Thank you for your feedback! You selected: ${satisfaction}`);
+            // Here you can add code to send the feedback to the server
+        });
+    </script>
+</body>
+</html>
+```
+
+This HTML page includes:
+- A form with three radio buttons for the user to select their level of satisfaction (Unhappy, Neutral, Satisfied).
+- A "Send Review" button to submit the form.
+- Basic CSS for styling the form and making it look presentable.
+- A JavaScript snippet to handle the form submission, display an alert with the selected feedback, and prevent the default form submission behavior. You can replace the alert with actual code to send the feedback to a server if needed.===============================
+Certainly! Below is a simple HTML example of a web page where a user can select their level of satisfaction with customer support and submit their feedback:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Support Feedback</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .feedback-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .feedback-container h1 {
+            margin-bottom: 20px;
+        }
+        .feedback-container label {
+            display: block;
+            margin: 10px 0;
+        }
+        .feedback-container input[type="radio"] {
+            margin-right: 10px;
+        }
+        .feedback-container button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: #fff;
+            cursor: pointer;
+        }
+        .feedback-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="feedback-container">
+        <h1>Customer Support Feedback</h1>
+        <form id="feedbackForm">
+            <label>
+                <input type="radio" name="satisfaction" value="Unhappy" required>
+                Unhappy
+            </label>
+            <label>
+                <input type="radio" name="satisfaction" value="Neutral">
+                Neutral
+            </label>
+            <label>
+                <input type="radio" name="satisfaction" value="Satisfied">
+                Satisfied
+            </label>
+            <button type="submit">Send Review</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const satisfaction = formData.get('satisfaction');
+            alert(`Thank you for your feedback! You selected: ${satisfaction}`);
+            // Here you can add code to send the feedback to the server
+        });
+    </script>
+</body>
+</html>
+```
+
+This HTML page includes:
+- A form with three radio buttons for the user to select their level of satisfaction (Unhappy, Neutral, Satisfied).
+- A "Send Review" button to submit the form.
+- Basic CSS for styling the form and making it look presentable.
+- A JavaScript snippet to handle the form submission, display an alert with the selected feedback, and prevent the default form submission behavior. You can replace the alert with actual code to send the feedback to a server if needed.Please generate the codes for the three files in <Code> without any note:
+index.html:
+```html
+<Code>
+```
+end index.html
+
+styles.css:
+```css
+<Code>
+```
+end style.css
+
+script.js:
+```javascript
+<Code>
+```
+end script.js===============================
+index.html:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Support Feedback</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="feedback-container">
+        <h1>Customer Support Feedback</h1>
+        <form id="feedbackForm">
+            <label>
+                <input type="radio" name="satisfaction" value="Unhappy" required>
+                Unhappy
+            </label>
+            <label>
+                <input type="radio" name="satisfaction" value="Neutral">
+                Neutral
+            </label>
+            <label>
+                <input type="radio" name="satisfaction" value="Satisfied">
+                Satisfied
+            </label>
+            <button type="submit">Send Review</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+```
+end index.html
+
+styles.css:
+```css
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+.feedback-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.feedback-container h1 {
+    margin-bottom: 20px;
+}
+.feedback-container label {
+    display: block;
+    margin: 10px 0;
+}
+.feedback-container input[type="radio"] {
+    margin-right: 10px;
+}
+.feedback-container button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+}
+.feedback-container button:hover {
+    background-color: #0056b3;
+}
+```
+end style.css
+
+script.js:
+```javascript
+document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const satisfaction = formData.get('satisfaction');
+    alert(`Thank you for your feedback! You selected: ${satisfaction}`);
+    // Here you can add code to send the feedback to the server
+});
+```
+end script.js===============================

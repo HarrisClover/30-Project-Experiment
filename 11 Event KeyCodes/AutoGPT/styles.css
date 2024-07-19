@@ -1,0 +1,26 @@
+
+.container {
+    text-align: center;
+    margin-top: 20vh;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+  
+  #joke {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  #get-joke {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  

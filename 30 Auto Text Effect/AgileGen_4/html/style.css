@@ -1,0 +1,48 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header, footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+main {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.interactive-text {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#dynamic-text {
+    font-weight: bold;
+    color: #e63946;
+}
+
+.slider-container {
+    margin: 20px auto;
+    width: 50%;
+}
+
+input[type="range"] {
+    width: 100%;
+}

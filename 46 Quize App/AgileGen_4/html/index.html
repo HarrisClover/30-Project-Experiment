@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Computer Quiz</h1>
+        <div id="progress">Question <span id="currentQuestionNumber">1</span> of <span id="totalQuestions">10</span></div>
+    </header>
+    <main>
+        <section id="questionSection">
+            <p id="questionText">What is the main component of a computer that processes instructions?</p>
+            <div id="optionsSection">
+                <button class="option" onclick="selectOption(1)">CPU</button>
+                <button class="option" onclick="selectOption(2)">Hard Drive</button>
+                <button class="option" onclick="selectOption(3)">RAM</button>
+                <button class="option" onclick="selectOption(4)">Motherboard</button>
+            </div>
+        </section>
+        <footer>
+            <button id="submitBtn" disabled onclick="submitAnswer()">Submit</button>
+            <div id="scoreDisplay" hidden>Score: <span id="score">0</span> out of <span id="totalQuestionsFooter">10</span></div>
+            <button id="retakeQuizBtn" hidden onclick="retakeQuiz()">Retake Quiz</button>
+        </footer>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

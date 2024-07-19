@@ -1,0 +1,1 @@
+I want to have a website that can read the keyCodes of the keyboard and display event.key, event.keyCode, event.code on the page. Web code (.html, .css, .js) is preferred.

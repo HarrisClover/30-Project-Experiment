@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Word Cards</title>
+    <link rel = "stylesheet" type = "text/css" href = "style.css">
+</head>
+<body>
+    <header>
+        <div class = "logo">
+            <img src = "logo.png" alt = "Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href = "#">Home</a></li>
+                <li><a href = "#">About</a></li>
+                <li><a href = "#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class = "card-grid">
+            <div class = "card" onclick = "playAudio('apple')">
+                <div class = "card-front">
+                    <h2>Apple</h2>
+                </div>
+                <div class = "card-back">
+                    <h2>Apple</h2>
+                    <p>A round fruit with red or green skin and a crisp white flesh.</p>
+                </div>
+            </div>
+            <div class = "card" onclick = "playAudio('banana')">
+                <div class = "card-front">
+                    <h2>Banana</h2>
+                </div>
+                <div class = "card-back">
+                    <h2>Banana</h2>
+                    <p>A long curved fruit with a yellow skin.</p>
+                </div>
+            </div>
+            <!-- Add more cards here -->
+        </div>
+    </main>
+    <footer>
+        <div class = "copyright">
+            &copy; 2021 Word Cards. All rights reserved.
+        </div>
+        <div class = "social-media">
+            <a href = "#"><img src = "facebook.png" alt = "Facebook"></a>
+            <a href = "#"><img src = "twitter.png" alt = "Twitter"></a>
+            <a href = "#"><img src = "instagram.png" alt = "Instagram"></a>
+        </div>
+    </footer>
+    <script src = "script.js"></script>
+</body>
+</html>

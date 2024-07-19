@@ -1,0 +1,107 @@
+Sure, let's create a simple web application with HTML, CSS, and JavaScript. 
+
+We will have three main files:
+
+1. index.html: This is the main HTML file that will contain the structure of our web page.
+2. style.css: This is the CSS file that will contain the styles for our web page.
+3. script.js: This is the JavaScript file that will contain the logic for our web page.
+
+Let's start with the HTML file:
+
+index.html
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Strength Indicator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Password Strength Indicator</h1>
+        <input type="password" id="password" placeholder="Enter your password" oninput="checkPasswordStrength(this.value)">
+        <div id="background"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+Next, let's create the CSS file:
+
+style.css
+```css
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#password {
+    padding: 10px;
+    font-size: 18px;
+}
+
+#background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('background.jpg');
+    z-index: -1;
+    transition: filter 0.5s ease;
+}
+```
+
+Finally, let's create the JavaScript file:
+
+script.js
+```javascript
+function checkPasswordStrength(password) {
+    var strength = 0;
+    if (password.match(/[a-z]+/)) {
+        strength += 1;
+    }
+    if (password.match(/[A-Z]+/)) {
+        strength += 1;
+    }
+    if (password.match(/[0-9]+/)) {
+        strength += 1;
+    }
+    if (password.match(/[$@#&!]+/)) {
+        strength += 1;
+    }
+
+    var background = document.getElementById('background');
+    switch(strength) {
+        case 0:
+            background.style.filter = 'blur(20px)';
+            break;
+        case 1:
+            background.style.filter = 'blur(15px)';
+            break;
+        case 2:
+            background.style.filter = 'blur(10px)';
+            break;
+        case 3:
+            background.style.filter = 'blur(5px)';
+            break;
+        case 4:
+            background.style.filter = 'blur(0px)';
+            break;
+    }
+}
+```
+
+This concludes a fully working implementation. Please note that you need to replace 'background.jpg' in the CSS file with the actual path to your background image. The JavaScript function `checkPasswordStrength` checks the strength of the password and adjusts the blur of the background image accordingly. The stronger the password, the less the blur.

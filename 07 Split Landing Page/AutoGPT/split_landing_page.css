@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .console {
+    flex: 1;
+    padding: 50px;
+    box-sizing: border-box;
+    transition: flex 0.5s ease;
+  }
+  
+  .console-ps5 {
+    background-color: #0062ff;
+    color: #fff;
+  }
+  
+  .console-xbox {
+    background-color: #107c10;
+    color: #fff;
+  }
+  
+  .console:hover {
+    flex: 1.5;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+  
+  .buy-btn {
+    display: inline-block;
+    background-color: #fff;
+    color: #000;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .buy-btn:hover {
+    background-color: #f1f1f1;
+  }

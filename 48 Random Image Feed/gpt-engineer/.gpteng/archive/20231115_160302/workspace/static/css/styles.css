@@ -1,0 +1,19 @@
+body {
+    background-color: #f0f0f0;
+}
+
+table {
+    margin: auto;
+    width: 50%;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}

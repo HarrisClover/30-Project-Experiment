@@ -1,0 +1,24 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    text-align: center;
+}
+
+#joke {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#new-joke {
+    font-size: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+}

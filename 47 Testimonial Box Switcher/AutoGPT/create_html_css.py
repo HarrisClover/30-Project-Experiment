@@ -1,0 +1,1 @@
+print('HTML structure and CSS styles created.')

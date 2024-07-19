@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Support Feedback</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Company Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/support">Support</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>How was your experience with our customer support?</h1>
+        <p>Please select one of the options below that best describes your level of satisfaction.</p>
+        <form id="feedbackForm">
+            <label>
+                <input type="radio" name="feedback" value="Unhappy">
+                I am not satisfied with the support.
+            </label>
+            <label>
+                <input type="radio" name="feedback" value="Neutral">
+                The support was acceptable but could be better.
+            </label>
+            <label>
+                <input type="radio" name="feedback" value="Satisfied">
+                I am happy with the support I received.
+            </label>
+            <button type="button" id="sendReview">Send Review</button>
+        </form>
+        <div id="confirmationMessage" style="display:none;">Thank you for your feedback!</div>
+    </main>
+    <footer>
+        <p>About Us | Privacy Policy | Terms of Service</p>
+        <div class="social-media">
+            <a href="#"><img src="facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="linkedin.png" alt="LinkedIn"></a>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

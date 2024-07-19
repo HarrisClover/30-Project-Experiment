@@ -1,0 +1,78 @@
+To achieve this, we will use HTML, CSS, and JavaScript. We will create three files: `index.html` for the structure of the webpage, `styles.css` for the styling of the webpage and the loading symbol, and `script.js` for the dynamic behavior of the loading symbol.
+
+Let's start with the HTML file:
+
+index.html
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loading Page</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div id="loader">
+        <div class="triangle"></div>
+        <div class="triangle"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+This HTML file sets up the structure of the webpage. It includes a `div` with the id `loader`, which contains two `div` elements with the class `triangle`. These `div` elements will be used to create the two triangles of the loading symbol.
+
+Next, let's create the CSS file:
+
+styles.css
+```css
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f3f3f3;
+}
+
+#loader {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+}
+
+.triangle:first-child {
+    border-bottom: 100px solid black;
+    animation: flip 2s infinite;
+}
+
+.triangle:last-child {
+    border-top: 100px solid black;
+    animation: flip 2s infinite reverse;
+}
+
+@keyframes flip {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(180deg); }
+}
+```
+
+This CSS file styles the webpage and the loading symbol. It uses Flexbox to center the loading symbol on the page. The `triangle` class is used to create the two triangles of the loading symbol using CSS borders. The `flip` animation is used to rotate the triangles.
+
+Finally, let's create the JavaScript file:
+
+script.js
+```javascript
+// No JavaScript code is needed as the animation is handled by CSS
+```
+
+In this case, no JavaScript code is needed as the animation of the loading symbol is handled entirely by CSS.
+
+This concludes a fully working implementation.

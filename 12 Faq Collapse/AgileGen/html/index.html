@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FAQ Page</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        .question-card {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .question-card:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .question-card .question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .question-card .question:hover {
+            background-color: #eee;
+        }
+
+        .question-card .answer {
+            display: none;
+            padding: 10px;
+        }
+
+        .question-card .arrow {
+            font-size: 20px;
+        }
+
+        .question-card .arrow:hover {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Website Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>FAQ Section</h1>
+        <div class="question-card">
+            <div class="question">
+                <h2>What is an operating system?</h2>
+                <span class="arrow">&#9660;</span>
+            </div>
+            <div class="answer">
+                <p>An operating system (OS) is system software that manages computer hardware, software resources, and provides various services for computer programs.</p>
+            </div>
+        </div>
+        <div class="question-card">
+            <div class="question">
+                <h2>What is the difference between RAM and ROM?</h2>
+                <span class="arrow">&#9660;</span>
+            </div>
+            <div class="answer">
+                <p>RAM (Random Access Memory) is volatile memory, it loses the information when the power goes off. ROM (Read Only Memory) is non-volatile memory, it does not lose information when power is lost.</p>
+            </div>
+        </div>
+        <div class="question-card">
+            <div class="question">
+                <h2>What is the function of a processor in a computer?</h2>
+                <span class="arrow">&#9660;</span>
+            </div>
+            <div class="answer">
+                <p>The processor (CPU) is the "brain" of the computer. It carries out the instructions of a computer program by performing basic arithmetical, logical, control and input/output (I/O) operations.</p>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

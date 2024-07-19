@@ -1,0 +1,20 @@
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+}
+
+.section {
+  text-align: center;
+}
+
+input[type="range"] {
+  width: 200px;
+}
+
+span {
+  display: block;
+  margin-top: 10px;
+}

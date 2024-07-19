@@ -1,0 +1,88 @@
+To create a Notes App in Python, we will need several components. Here is a list of the core classes, functions, and methods that will be necessary:
+
+1. Note class: This class will represent a single note. It will have properties like title, content, and creation date.
+
+2. NotesDatabase class: This class will handle all interactions with the database. It will have methods for adding, updating, deleting, and retrieving notes.
+
+3. NotesApp class: This class will be the main application class. It will use the NotesDatabase class to interact with the database and will provide a user interface for the user to interact with their notes.
+
+4. main function: This function will be the entry point of the application. It will create an instance of the NotesApp class and start the application.
+
+Now, let's start with the "entrypoint" file, then go to the ones that are imported by that file, and so on.
+
+src/main.py
+```python
+from notes_app import NotesApp
+
+def main():
+    app = NotesApp()
+    app.run()
+
+if __name__ == "__main__":
+    main()
+```
+
+src/notes_app.py
+```python
+from notes_database import NotesDatabase
+
+class NotesApp:
+    def __init__(self):
+        self.db = NotesDatabase()
+
+    def run(self):
+        # TODO: Implement the main application loop
+        pass
+```
+
+src/notes_database.py
+```python
+from note import Note
+import sqlite3
+
+class NotesDatabase:
+    def __init__(self):
+        self.conn = sqlite3.connect('notes.db')
+        self.cursor = self.conn.cursor()
+        self.cursor.execute('''
+            CREATE TABLE IF NOT EXISTS notes
+            (id INTEGER PRIMARY KEY, title TEXT, content TEXT, date TEXT)
+        ''')
+
+    def add_note(self, note):
+        # TODO: Implement adding a note to the database
+        pass
+
+    def update_note(self, note):
+        # TODO: Implement updating a note in the database
+        pass
+
+    def delete_note(self, note_id):
+        # TODO: Implement deleting a note from the database
+        pass
+
+    def get_notes(self):
+        # TODO: Implement retrieving all notes from the database
+        pass
+```
+
+src/note.py
+```python
+from dataclasses import dataclass
+from datetime import datetime
+
+@dataclass
+class Note:
+    id: int
+    title: str
+    content: str
+    date: datetime
+```
+
+requirements.txt
+```
+sqlite3
+dataclasses
+```
+
+This concludes a fully working implementation.

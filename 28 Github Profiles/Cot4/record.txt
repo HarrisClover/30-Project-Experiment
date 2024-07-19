@@ -1,0 +1,219 @@
+This front-end code implements a Github user search application where users can enter a Github username in the input field and view the user's basic information and repository list.Let's think step by step===============================
+1. **Design the User Interface (UI):** The first step is to design the UI of the application. This will include an input field where users can enter the Github username, a search button to initiate the search, and a section to display the user's basic information and repository list.
+
+2. **Create the HTML Structure:** Create the HTML structure for the application. This will include the input field, search button, and the section to display the user's information and repository list.
+
+3. **Style the Application:** Use CSS to style the application. This will include styling the input field, search button, and the section to display the user's information and repository list.
+
+4. **Implement the Search Functionality:** Use JavaScript to implement the search functionality. This will involve fetching the user's information and repository list from the Github API when the search button is clicked.
+
+5. **Display the User's Information and Repository List:** After fetching the user's information and repository list from the Github API, use JavaScript to display this information in the designated section of the application.
+
+6. **Test the Application:** Finally, test the application to ensure that it works as expected. This will involve entering various Github usernames in the input field and checking if the correct information and repository list are displayed.
+
+Here is a simple example of how the code might look like:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Github User Search</title>
+    <style>
+        /* Add your CSS here */
+    </style>
+</head>
+<body>
+    <input type="text" id="username" placeholder="Enter Github username">
+    <button onclick="searchUser()">Search</button>
+    <div id="user-info"></div>
+    <ul id="repo-list"></ul>
+
+    <script>
+        function searchUser() {
+            var username = document.getElementById('username').value;
+            fetch('https://api.github.com/users/' + username)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('user-info').innerHTML = `
+                        <h2>${data.name}</h2>
+                        <p>${data.bio}</p>
+                    `;
+                });
+
+            fetch('https://api.github.com/users/' + username + '/repos')
+                .then(response => response.json())
+                .then(data => {
+                    var repoList = document.getElementById('repo-list');
+                    repoList.innerHTML = '';
+                    for (var i = 0; i < data.length; i++) {
+                        var li = document.createElement('li');
+                        li.textContent = data[i].name;
+                        repoList.appendChild(li);
+                    }
+                });
+        }
+    </script>
+</body>
+</html>
+```
+
+This is a very basic example and doesn't include any error handling or loading indicators, but it should give you a good starting point.===============================
+1. **Design the User Interface (UI):** The first step is to design the UI of the application. This will include an input field where users can enter the Github username, a search button to initiate the search, and a section to display the user's basic information and repository list.
+
+2. **Create the HTML Structure:** Create the HTML structure for the application. This will include the input field, search button, and the section to display the user's information and repository list.
+
+3. **Style the Application:** Use CSS to style the application. This will include styling the input field, search button, and the section to display the user's information and repository list.
+
+4. **Implement the Search Functionality:** Use JavaScript to implement the search functionality. This will involve fetching the user's information and repository list from the Github API when the search button is clicked.
+
+5. **Display the User's Information and Repository List:** After fetching the user's information and repository list from the Github API, use JavaScript to display this information in the designated section of the application.
+
+6. **Test the Application:** Finally, test the application to ensure that it works as expected. This will involve entering various Github usernames in the input field and checking if the correct information and repository list are displayed.
+
+Here is a simple example of how the code might look like:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Github User Search</title>
+    <style>
+        /* Add your CSS here */
+    </style>
+</head>
+<body>
+    <input type="text" id="username" placeholder="Enter Github username">
+    <button onclick="searchUser()">Search</button>
+    <div id="user-info"></div>
+    <ul id="repo-list"></ul>
+
+    <script>
+        function searchUser() {
+            var username = document.getElementById('username').value;
+            fetch('https://api.github.com/users/' + username)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('user-info').innerHTML = `
+                        <h2>${data.name}</h2>
+                        <p>${data.bio}</p>
+                    `;
+                });
+
+            fetch('https://api.github.com/users/' + username + '/repos')
+                .then(response => response.json())
+                .then(data => {
+                    var repoList = document.getElementById('repo-list');
+                    repoList.innerHTML = '';
+                    for (var i = 0; i < data.length; i++) {
+                        var li = document.createElement('li');
+                        li.textContent = data[i].name;
+                        repoList.appendChild(li);
+                    }
+                });
+        }
+    </script>
+</body>
+</html>
+```
+
+This is a very basic example and doesn't include any error handling or loading indicators, but it should give you a good starting point.Please generate the codes for the three files in <Code> without any note:
+index.html:
+```html
+<Code>
+```
+end index.html
+
+style.css:
+```css
+<Code>
+```
+end style.css
+
+script.js:
+```javascript
+<Code>
+```
+end script.js===============================
+index.html:
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Github User Search</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <input type="text" id="username" placeholder="Enter Github username">
+    <button onclick="searchUser()">Search</button>
+    <div id="user-info"></div>
+    <ul id="repo-list"></ul>
+    <script src="script.js"></script>
+</body>
+</html>
+```
+end index.html
+
+style.css:
+```css
+body {
+    font-family: Arial, sans-serif;
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin: 10px 0;
+    width: 200px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#user-info {
+    margin: 20px 0;
+}
+
+#repo-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#repo-list li {
+    padding: 5px;
+    background-color: #f8f9fa;
+    margin-bottom: 10px;
+}
+```
+end style.css
+
+script.js:
+```javascript
+function searchUser() {
+    var username = document.getElementById('username').value;
+    fetch('https://api.github.com/users/' + username)
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('user-info').innerHTML = `
+                <h2>${data.name}</h2>
+                <p>${data.bio}</p>
+            `;
+        });
+
+    fetch('https://api.github.com/users/' + username + '/repos')
+        .then(response => response.json())
+        .then(data => {
+            var repoList = document.getElementById('repo-list');
+            repoList.innerHTML = '';
+            for (var i = 0; i < data.length; i++) {
+                var li = document.createElement('li');
+                li.textContent = data[i].name;
+                repoList.appendChild(li);
+            }
+        });
+}
+```
+end script.js===============================

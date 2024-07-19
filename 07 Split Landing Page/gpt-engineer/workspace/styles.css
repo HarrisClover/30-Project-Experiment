@@ -1,0 +1,17 @@
+/* ...existing styles... */
+
+.container.hover-left .left {
+    width: 75%;
+}
+
+.container.hover-left .right {
+    width: 25%;
+}
+
+.container.hover-right .left {
+    width: 25%;
+}
+
+.container.hover-right .right {
+    width: 75%;
+}

@@ -1,0 +1,220 @@
+These front-end code implement a split landing page that showcases the PlayStation 5 and Xbox Series X gaming consoles with buy buttons.   Additionally, when hovering over one of the consoles, its width expands while the width of the other console shrinks.Let's think step by step===============================
+Step 1: HTML Structure
+
+First, we need to create the HTML structure for our landing page. We will have two main divs, one for each console. Inside each div, we will have an image of the console, a title, a description, and a buy button.
+
+```html
+<div class="container">
+  <div class="console ps5">
+    <img src="ps5.jpg" alt="PlayStation 5">
+    <h1>PlayStation 5</h1>
+    <p>Experience lightning-fast loading with an ultra-high speed SSD, deeper immersion with support for haptic feedback, adaptive triggers and 3D Audio, and an all-new generation of incredible PlayStation games.</p>
+    <button>Buy Now</button>
+  </div>
+  <div class="console xbox">
+    <img src="xbox.jpg" alt="Xbox Series X">
+    <h1>Xbox Series X</h1>
+    <p>The most powerful Xbox ever. Discover a more immersive, captivating gaming experience with the Xbox Series X, the next generation of Xbox. With 12 teraflops of power, this console offers increased visual fidelity and improved loading speeds.</p>
+    <button>Buy Now</button>
+  </div>
+</div>
+```
+
+Step 2: CSS Styling
+
+Next, we need to style our HTML with CSS. We will make each console div take up half of the screen, and we will add a hover effect that expands the width of the hovered console and shrinks the width of the other console.
+
+```css
+.container {
+  display: flex;
+}
+
+.console {
+  width: 50%;
+  transition: width 0.5s;
+}
+
+.console:hover {
+  width: 75%;
+}
+
+.console img {
+  width: 100%;
+}
+
+.console h1, .console p, .console button {
+  margin: 20px;
+}
+```
+
+Step 3: JavaScript Interaction
+
+Finally, we need to add some JavaScript to handle the hover effect. When a console is hovered over, we will add a class to it that expands its width, and we will remove that class from the other console.
+
+```javascript
+const consoles = document.querySelectorAll('.console');
+
+consoles.forEach(console => {
+  console.addEventListener('mouseover', () => {
+    console.classList.add('expand');
+    getOtherConsole(console).classList.remove('expand');
+  });
+});
+
+function getOtherConsole(currentConsole) {
+  return currentConsole.classList.contains('ps5') ? document.querySelector('.xbox') : document.querySelector('.ps5');
+}
+```
+
+This is a basic implementation of a split landing page with hover effects. You can further customize the design and functionality to fit your needs.===============================
+Step 1: HTML Structure
+
+First, we need to create the HTML structure for our landing page. We will have two main divs, one for each console. Inside each div, we will have an image of the console, a title, a description, and a buy button.
+
+```html
+<div class="container">
+  <div class="console ps5">
+    <img src="ps5.jpg" alt="PlayStation 5">
+    <h1>PlayStation 5</h1>
+    <p>Experience lightning-fast loading with an ultra-high speed SSD, deeper immersion with support for haptic feedback, adaptive triggers and 3D Audio, and an all-new generation of incredible PlayStation games.</p>
+    <button>Buy Now</button>
+  </div>
+  <div class="console xbox">
+    <img src="xbox.jpg" alt="Xbox Series X">
+    <h1>Xbox Series X</h1>
+    <p>The most powerful Xbox ever. Discover a more immersive, captivating gaming experience with the Xbox Series X, the next generation of Xbox. With 12 teraflops of power, this console offers increased visual fidelity and improved loading speeds.</p>
+    <button>Buy Now</button>
+  </div>
+</div>
+```
+
+Step 2: CSS Styling
+
+Next, we need to style our HTML with CSS. We will make each console div take up half of the screen, and we will add a hover effect that expands the width of the hovered console and shrinks the width of the other console.
+
+```css
+.container {
+  display: flex;
+}
+
+.console {
+  width: 50%;
+  transition: width 0.5s;
+}
+
+.console:hover {
+  width: 75%;
+}
+
+.console img {
+  width: 100%;
+}
+
+.console h1, .console p, .console button {
+  margin: 20px;
+}
+```
+
+Step 3: JavaScript Interaction
+
+Finally, we need to add some JavaScript to handle the hover effect. When a console is hovered over, we will add a class to it that expands its width, and we will remove that class from the other console.
+
+```javascript
+const consoles = document.querySelectorAll('.console');
+
+consoles.forEach(console => {
+  console.addEventListener('mouseover', () => {
+    console.classList.add('expand');
+    getOtherConsole(console).classList.remove('expand');
+  });
+});
+
+function getOtherConsole(currentConsole) {
+  return currentConsole.classList.contains('ps5') ? document.querySelector('.xbox') : document.querySelector('.ps5');
+}
+```
+
+This is a basic implementation of a split landing page with hover effects. You can further customize the design and functionality to fit your needs.Please generate the codes for the three files in <Code> without any note:
+index.html:
+```html
+<Code>
+```
+end index.html
+
+style.css:
+```css
+<Code>
+```
+end style.css
+
+script.js:
+```javascript
+<Code>
+```
+end script.js===============================
+index.html:
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="console ps5">
+      <img src="ps5.jpg" alt="PlayStation 5">
+      <h1>PlayStation 5</h1>
+      <p>Experience lightning-fast loading with an ultra-high speed SSD, deeper immersion with support for haptic feedback, adaptive triggers and 3D Audio, and an all-new generation of incredible PlayStation games.</p>
+      <button>Buy Now</button>
+    </div>
+    <div class="console xbox">
+      <img src="xbox.jpg" alt="Xbox Series X">
+      <h1>Xbox Series X</h1>
+      <p>The most powerful Xbox ever. Discover a more immersive, captivating gaming experience with the Xbox Series X, the next generation of Xbox. With 12 teraflops of power, this console offers increased visual fidelity and improved loading speeds.</p>
+      <button>Buy Now</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+```
+
+style.css:
+```css
+.container {
+  display: flex;
+}
+
+.console {
+  width: 50%;
+  transition: width 0.5s;
+}
+
+.console:hover {
+  width: 75%;
+}
+
+.console img {
+  width: 100%;
+}
+
+.console h1, .console p, .console button {
+  margin: 20px;
+}
+```
+
+script.js:
+```javascript
+const consoles = document.querySelectorAll('.console');
+
+consoles.forEach(console => {
+  console.addEventListener('mouseover', () => {
+    console.classList.add('expand');
+    getOtherConsole(console).classList.remove('expand');
+  });
+});
+
+function getOtherConsole(currentConsole) {
+  return currentConsole.classList.contains('ps5') ? document.querySelector('.xbox') : document.querySelector('.ps5');
+}
+```===============================

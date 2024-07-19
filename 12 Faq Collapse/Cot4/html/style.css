@@ -1,0 +1,21 @@
+
+#faq-section {
+  font-family: Arial, sans-serif;
+}
+
+.faq-question {
+  font-size: 1.2em;
+  color: #333;
+}
+
+.faq-answer {
+  display: none;
+  padding: 10px;
+  margin-top: 5px;
+  border-top: 1px solid #ddd;
+}
+
+.arrow {
+  float: right;
+  cursor: pointer;
+}

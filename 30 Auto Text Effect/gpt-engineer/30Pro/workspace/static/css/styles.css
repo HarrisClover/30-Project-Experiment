@@ -1,0 +1,12 @@
+body {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+#speed {
+    width: 200px;
+}

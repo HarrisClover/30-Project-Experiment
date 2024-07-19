@@ -1,0 +1,79 @@
+To achieve this, we will use Python with Flask for the backend and HTML, CSS, and JavaScript for the frontend. We will also use jQuery UI for the sliding buttons. 
+
+Let's start with the backend.
+
+src/app.py
+```python
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+
+This is a simple Flask application that serves an HTML file when the root ("/") URL is accessed.
+
+Next, let's create the HTML file.
+
+templates/index.html
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project Management Goals</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</head>
+<body>
+    <div id="quality-slider" class="slider"></div>
+    <div id="cost-slider" class="slider"></div>
+    <div id="time-slider" class="slider"></div>
+</body>
+</html>
+```
+
+This HTML file includes the jQuery and jQuery UI libraries, as well as a custom JavaScript file (main.js) that we will create next. It also includes three div elements that will be turned into sliders.
+
+Next, let's create the JavaScript file.
+
+static/main.js
+```javascript
+$(function() {
+    $(".slider").slider({
+        range: "min",
+        value: 50,
+        min: 0,
+        max: 100,
+        slide: function(event, ui) {
+            var total = 0;
+            $(".slider").not(this).each(function() {
+                total += $(this).slider("value");
+            });
+
+            if (total + ui.value > 100) {
+                return false;
+            }
+        }
+    });
+});
+```
+
+This JavaScript file uses jQuery UI to turn the div elements into sliders. It also includes a function that runs whenever a slider is moved. This function calculates the total value of the other two sliders, and if adding the new value would exceed 100, it cancels the slide.
+
+Finally, let's create the requirements.txt file.
+
+requirements.txt
+```
+Flask==1.1.2
+```
+
+This file lists the Python packages that need to be installed for the application to run.
+
+This concludes a fully working implementation.

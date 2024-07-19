@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Computer Quiz</title>
+</head>
+<body>
+    <h1>{{ question.question_text }}</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.answer }}
+        {{ form.submit() }}
+    </form>
+</body>
+</html>

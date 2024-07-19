@@ -1,0 +1,24 @@
+
+#water-tracker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#glass-icons {
+    display: flex;
+    gap: 10px;
+}
+.glass-icon {
+    width: 50px;
+    cursor: pointer;
+}
+#progress-tracker {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+}
+#progress-bar {
+    height: 20px;
+    background-color: lightblue;
+    width: 0;
+}

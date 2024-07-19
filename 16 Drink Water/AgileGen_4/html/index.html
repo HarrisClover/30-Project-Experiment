@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Water Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Daily Water Tracker</h1>
+    <h2>Stay Hydrated, Stay Healthy</h2>
+</header>
+<main>
+    <div id="tracker">
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+        <div id="intake-info">
+            <span id="current-intake">0 ml</span> / <span id="daily-goal">2000 ml</span>
+        </div>
+    </div>
+    <div id="container-selection">
+        <button class="water-btn" data-volume="250">Glass - 250ml</button>
+        <button class="water-btn" data-volume="500">Bottle - 500ml</button>
+    </div>
+    <div id="notification-area"></div>
+</main>
+<footer>
+    <p>Tips on hydration. <a href="#">More health-related resources</a></p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

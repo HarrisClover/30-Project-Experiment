@@ -1,0 +1,57 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0a2e36;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+header, footer {
+    text-align: center;
+    padding: 20px;
+}
+
+main {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+#photo-display-area {
+    position: relative;
+    margin: 20px 0;
+}
+
+#photo-display-area img {
+    width: 100%;
+    height: auto;
+}
+
+.navigation-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.arrow {
+    cursor: pointer;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #ffffff;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+.arrow:hover {
+    color: #00b4d8;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+footer {
+    font-size: 0.8em;
+}

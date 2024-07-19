@@ -1,0 +1,5 @@
+
+In this example, "library1" and "library2" are the dependencies required for the project. The "^" symbol indicates that the project can use any version of the library that is compatible with the specified major version.
+
+To install the dependencies specified in the package.json file, you can run the following command in the terminal:
+

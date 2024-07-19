@@ -1,0 +1,10 @@
+/clock_app
+    /static
+        /css
+            style.css
+        /js
+            clock.js
+    /templates
+        index.html
+    app.py
+    requirements.txt

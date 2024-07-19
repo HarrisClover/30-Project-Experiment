@@ -1,0 +1,113 @@
+To implement this task, we will use Python with Flask as the web framework and SQLAlchemy as the ORM for database interactions. We will also use JavaScript with jQuery for the client-side scripting. The database will be SQLite for simplicity.
+
+Here are the core classes, functions, and methods that will be necessary:
+
+1. `User` class: This class will represent a user in the system. It will have attributes such as `id`, `name`, `location`, and `online_status`.
+
+2. `UserSchema` class: This class will be used for serializing and deserializing `User` instances to and from JSON format.
+
+3. `get_online_users` function: This function will query the database and return a list of online users.
+
+4. `filter_users` function: This function will filter the list of online users based on the search query.
+
+5. `app` Flask application: This is the main application object.
+
+6. `@app.route('/')` function: This function will render the main page of the application.
+
+7. `@app.route('/users', methods=['GET'])` function: This function will handle GET requests to the `/users` endpoint. It will return a list of online users in JSON format.
+
+8. `@app.route('/users', methods=['POST'])` function: This function will handle POST requests to the `/users` endpoint. It will filter the list of online users based on the search query and return the result in JSON format.
+
+9. `search` JavaScript function: This function will send a POST request to the `/users` endpoint with the search query and update the list of online users on the page.
+
+Now let's start with the "entrypoint" file:
+
+app.py
+```python
+from flask import Flask, render_template, request, jsonify
+from flask_sqlalchemy import SQLAlchemy
+from flask_marshmallow import Marshmallow
+from models import User, UserSchema
+
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
+db = SQLAlchemy(app)
+ma = Marshmallow(app)
+
+user_schema = UserSchema()
+users_schema = UserSchema(many=True)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/users', methods=['GET'])
+def get_users():
+    users = User.query.filter_by(online_status=True).all()
+    return users_schema.jsonify(users)
+
+@app.route('/users', methods=['POST'])
+def filter_users():
+    query = request.json['query']
+    users = User.query.filter(User.name.contains(query) | User.location.contains(query)).filter_by(online_status=True).all()
+    return users_schema.jsonify(users)
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+
+models.py
+```python
+from flask_sqlalchemy import SQLAlchemy
+from flask_marshmallow import Marshmallow
+
+db = SQLAlchemy()
+ma = Marshmallow()
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), nullable=False)
+    location = db.Column(db.String(100), nullable=False)
+    online_status = db.Column(db.Boolean, default=False)
+
+class UserSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = User
+        load_instance = True
+```
+
+templates/index.html
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Users</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function search() {
+            var query = $('#search').val();
+            $.post('/users', {query: query}, function(data) {
+                $('#users').empty();
+                $.each(data, function(i, user) {
+                    $('#users').append('<li>' + user.name + ' (' + user.location + ')</li>');
+                });
+            });
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="search" onkeyup="search()">
+    <ul id="users"></ul>
+</body>
+</html>
+```
+
+requirements.txt
+```
+Flask==1.1.2
+Flask-SQLAlchemy==2.4.4
+Flask-Marshmallow==0.14.0
+marshmallow-sqlalchemy==0.23.1
+```
+
+This concludes a fully working implementation.

@@ -1,0 +1,26 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#app {
+    width: 600px;
+    margin: 0 auto;
+}
+
+#username {
+    width: 80%;
+    padding: 10px;
+}
+
+#search {
+    width: 15%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#user-info, #repo-list {
+    margin-top: 20px;
+}

@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+    margin: 0 auto;
+}
+.console {
+    width: 400px;
+    padding: 20px;
+    background-color: #f2f2f2;
+    transition: width 0.3s;
+}
+.console:hover {
+    width: 500px;
+}
+.console:hover ~ .console {
+    width: 300px;
+}
+h2 {
+    margin-top: 0;
+}
+.buy-button {
+    margin-top: 20px;
+}

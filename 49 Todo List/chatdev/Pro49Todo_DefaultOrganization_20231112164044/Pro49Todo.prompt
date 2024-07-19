@@ -1,0 +1,1 @@
+This front-end code implements a to-do list application where users can add, mark as completed, and delete to-do items, and uses local storage to persist the list in the browser.

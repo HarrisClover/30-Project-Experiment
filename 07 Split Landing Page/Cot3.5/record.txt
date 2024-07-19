@@ -1,0 +1,377 @@
+These front-end code implement a split landing page that showcases the PlayStation 5 and Xbox Series X gaming consoles with buy buttons.   Additionally, when hovering over one of the consoles, its width expands while the width of the other console shrinks.Let's think step by step===============================
+Step 1: HTML Structure
+First, we need to create the HTML structure for the split landing page. We will have a container div that will hold two separate divs, one for each gaming console. Inside each console div, we will have an image of the console and a buy button.
+
+```html
+<div class="container">
+  <div class="console ps5">
+    <img src="ps5.jpg" alt="PlayStation 5">
+    <button class="buy-button">Buy PlayStation 5</button>
+  </div>
+  <div class="console xbox">
+    <img src="xbox.jpg" alt="Xbox Series X">
+    <button class="buy-button">Buy Xbox Series X</button>
+  </div>
+</div>
+```
+
+Step 2: CSS Styling
+Next, we need to apply some CSS styling to position and style the elements. We will use flexbox to create a split layout and set initial widths for the console divs.
+
+```css
+.container {
+  display: flex;
+}
+
+.console {
+  flex: 1;
+  transition: width 0.3s ease;
+}
+
+.console img {
+  width: 100%;
+  height: auto;
+}
+
+.console.ps5 {
+  background-color: #4c4c4c;
+}
+
+.console.xbox {
+  background-color: #1b1b1b;
+}
+
+.buy-button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+```
+
+Step 3: JavaScript Event Listeners
+To achieve the hover effect, we need to add event listeners to the console divs. When hovering over a console, we will increase its width and decrease the width of the other console.
+
+```javascript
+const ps5 = document.querySelector('.console.ps5');
+const xbox = document.querySelector('.console.xbox');
+
+ps5.addEventListener('mouseover', () => {
+  ps5.style.width = '70%';
+  xbox.style.width = '30%';
+});
+
+xbox.addEventListener('mouseover', () => {
+  xbox.style.width = '70%';
+  ps5.style.width = '30%';
+});
+
+ps5.addEventListener('mouseout', () => {
+  ps5.style.width = '50%';
+  xbox.style.width = '50%';
+});
+
+xbox.addEventListener('mouseout', () => {
+  xbox.style.width = '50%';
+  ps5.style.width = '50%';
+});
+```
+
+Step 4: Final Touches
+Lastly, we can add some additional styling to make the page visually appealing. This can include setting a fixed height for the container, adding some margin and padding, and customizing the buy buttons.
+
+```css
+.container {
+  display: flex;
+  height: 500px;
+  margin: 20px;
+  padding: 20px;
+}
+
+.console {
+  flex: 1;
+  transition: width 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.console.ps5 {
+  background-color: #4c4c4c;
+  color: #fff;
+}
+
+.console.xbox {
+  background-color: #1b1b1b;
+  color: #fff;
+}
+
+.buy-button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+  background-color: #0056b3;
+}
+```
+
+That's it! With these steps, you should have a split landing page showcasing the PlayStation 5 and Xbox Series X gaming consoles with buy buttons. When hovering over one console, its width expands while the width of the other console shrinks.===============================
+Step 1: HTML Structure
+First, we need to create the HTML structure for the split landing page. We will have a container div that will hold two separate divs, one for each gaming console. Inside each console div, we will have an image of the console and a buy button.
+
+```html
+<div class="container">
+  <div class="console ps5">
+    <img src="ps5.jpg" alt="PlayStation 5">
+    <button class="buy-button">Buy PlayStation 5</button>
+  </div>
+  <div class="console xbox">
+    <img src="xbox.jpg" alt="Xbox Series X">
+    <button class="buy-button">Buy Xbox Series X</button>
+  </div>
+</div>
+```
+
+Step 2: CSS Styling
+Next, we need to apply some CSS styling to position and style the elements. We will use flexbox to create a split layout and set initial widths for the console divs.
+
+```css
+.container {
+  display: flex;
+}
+
+.console {
+  flex: 1;
+  transition: width 0.3s ease;
+}
+
+.console img {
+  width: 100%;
+  height: auto;
+}
+
+.console.ps5 {
+  background-color: #4c4c4c;
+}
+
+.console.xbox {
+  background-color: #1b1b1b;
+}
+
+.buy-button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+```
+
+Step 3: JavaScript Event Listeners
+To achieve the hover effect, we need to add event listeners to the console divs. When hovering over a console, we will increase its width and decrease the width of the other console.
+
+```javascript
+const ps5 = document.querySelector('.console.ps5');
+const xbox = document.querySelector('.console.xbox');
+
+ps5.addEventListener('mouseover', () => {
+  ps5.style.width = '70%';
+  xbox.style.width = '30%';
+});
+
+xbox.addEventListener('mouseover', () => {
+  xbox.style.width = '70%';
+  ps5.style.width = '30%';
+});
+
+ps5.addEventListener('mouseout', () => {
+  ps5.style.width = '50%';
+  xbox.style.width = '50%';
+});
+
+xbox.addEventListener('mouseout', () => {
+  xbox.style.width = '50%';
+  ps5.style.width = '50%';
+});
+```
+
+Step 4: Final Touches
+Lastly, we can add some additional styling to make the page visually appealing. This can include setting a fixed height for the container, adding some margin and padding, and customizing the buy buttons.
+
+```css
+.container {
+  display: flex;
+  height: 500px;
+  margin: 20px;
+  padding: 20px;
+}
+
+.console {
+  flex: 1;
+  transition: width 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.console.ps5 {
+  background-color: #4c4c4c;
+  color: #fff;
+}
+
+.console.xbox {
+  background-color: #1b1b1b;
+  color: #fff;
+}
+
+.buy-button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+  background-color: #0056b3;
+}
+```
+
+That's it! With these steps, you should have a split landing page showcasing the PlayStation 5 and Xbox Series X gaming consoles with buy buttons. When hovering over one console, its width expands while the width of the other console shrinks.Please generate the codes for the three files in <Code> without any note:
+index.html:
+```html
+<Code>
+```
+end index.html
+
+style.css:
+```css
+<Code>
+```
+end style.css
+
+script.js:
+```javascript
+<Code>
+```
+end script.js===============================
+index.html:
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="console ps5">
+      <img src="ps5.jpg" alt="PlayStation 5">
+      <button class="buy-button">Buy PlayStation 5</button>
+    </div>
+    <div class="console xbox">
+      <img src="xbox.jpg" alt="Xbox Series X">
+      <button class="buy-button">Buy Xbox Series X</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+```
+end index.html
+
+style.css:
+```css
+.container {
+  display: flex;
+  height: 500px;
+  margin: 20px;
+  padding: 20px;
+}
+
+.console {
+  flex: 1;
+  transition: width 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.console.ps5 {
+  background-color: #4c4c4c;
+  color: #fff;
+}
+
+.console.xbox {
+  background-color: #1b1b1b;
+  color: #fff;
+}
+
+.buy-button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+  background-color: #0056b3;
+}
+```
+end style.css
+
+script.js:
+```javascript
+const ps5 = document.querySelector('.console.ps5');
+const xbox = document.querySelector('.console.xbox');
+
+ps5.addEventListener('mouseover', () => {
+  ps5.style.width = '70%';
+  xbox.style.width = '30%';
+});
+
+xbox.addEventListener('mouseover', () => {
+  xbox.style.width = '70%';
+  ps5.style.width = '30%';
+});
+
+ps5.addEventListener('mouseout', () => {
+  ps5.style.width = '50%';
+  xbox.style.width = '50%';
+});
+
+xbox.addEventListener('mouseout', () => {
+  xbox.style.width = '50%';
+  ps5.style.width = '50%';
+});
+```
+end script.js===============================

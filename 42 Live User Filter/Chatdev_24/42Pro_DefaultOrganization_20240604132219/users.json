@@ -1,0 +1,7 @@
+[
+    {"name": "John Doe", "location": "New York", "online": true},
+    {"name": "Jane Smith", "location": "London", "online": false},
+    {"name": "Alice Johnson", "location": "Paris", "online": true},
+    {"name": "Bob Williams", "location": "Berlin", "online": true},
+    {"name": "Charlie Brown", "location": "Tokyo", "online": false}
+]

@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatic Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">PasswordGen</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="password-generator">
+            <h1>Create Your Custom Password</h1>
+            <form id="passwordForm">
+                <div class="form-group">
+                    <label for="passwordLength">Password Length</label>
+                    <input type="number" id="passwordLength" min="1" max="128" value="12">
+                </div>
+                <div class="form-group">
+                    <label>Include in Password:</label>
+                    <div>
+                        <input type="checkbox" id="includeUppercase" checked>
+                        <label for="includeUppercase">Uppercase Letters (A-Z)</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="includeLowercase" checked>
+                        <label for="includeLowercase">Lowercase Letters (a-z)</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="includeNumbers" checked>
+                        <label for="includeNumbers">Numbers (0-9)</label>
+                    </div>
+                </div>
+                <button type="button" onclick="generatePassword()">Generate Password</button>
+            </form>
+            <div class="password-display">
+                <h2>Your Generated Password</h2>
+                <input type="text" id="generatedPassword" readonly>
+                <button type="button" onclick="regeneratePassword()">Regenerate</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 PasswordGen. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

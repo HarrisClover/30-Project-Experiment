@@ -1,0 +1,16 @@
+body {
+    background-color: #f4f4f4;
+}
+
+.movie-card {
+    margin-bottom: 20px;
+}
+
+.movie-card img {
+    width: 100%;
+    height: auto;
+}
+
+.movie-card .card-body {
+    padding: 15px;
+}

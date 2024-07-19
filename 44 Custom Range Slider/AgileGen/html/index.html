@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Slider Page</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="slider-container">
+            <input type="range" id="slider" min="0" max="100" value="50">
+            <span id="slider-value">50</span>
+        </div>
+        <div class="input-container">
+            <input type="number" id="input-value" min="0" max="100" value="50">
+        </div>
+        <div class="button-container">
+            <button id="reset-button">Reset</button>
+        </div>
+    </main>
+    <footer>
+        <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <p>Contact information</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

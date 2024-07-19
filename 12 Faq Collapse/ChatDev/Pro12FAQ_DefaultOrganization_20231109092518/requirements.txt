@@ -1,0 +1,16 @@
+
+3. Access the web page by opening a web browser and navigating to `http://localhost:5000`.
+
+4. The FAQ section will be displayed with each question having a drop-down arrow. Click on the arrow to show or hide the answer.
+
+## FAQ Data
+
+The questions and answers are stored in the `faqs` list in the main.py file. You can modify this list to add, remove, or update the FAQs as needed.
+
+## Dependencies
+
+- tkinter==8.6: Required for creating the graphical user interface.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).

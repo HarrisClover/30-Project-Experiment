@@ -1,0 +1,69 @@
+This task involves creating a web page with three sliders representing the three main goals of project management - quality, cost, and time. The user can select any two sliders at the same time, but not all three. This will be implemented using HTML for the webpage structure, CSS for styling, and JavaScript for the interactive functionality. 
+
+Let's start with the HTML file:
+
+index.html
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project Management Goals</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Project Management Goals</h1>
+    <div class="slider-container">
+        <label for="quality">Quality</label>
+        <input type="range" min="1" max="100" value="50" class="slider" id="quality">
+
+        <label for="cost">Cost</label>
+        <input type="range" min="1" max="100" value="50" class="slider" id="cost">
+
+        <label for="time">Time</label>
+        <input type="range" min="1" max="100" value="50" class="slider" id="time">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+Next, we'll create the CSS file for styling:
+
+styles.css
+```css
+body {
+    font-family: Arial, sans-serif;
+}
+
+.slider-container {
+    width: 300px;
+    margin: auto;
+}
+
+.slider {
+    width: 100%;
+}
+```
+
+Finally, we'll create the JavaScript file to handle the slider functionality:
+
+script.js
+```javascript
+let sliders = document.getElementsByClassName('slider');
+
+for(let i = 0; i < sliders.length; i++) {
+    sliders[i].oninput = function() {
+        let total = 0;
+        for(let j = 0; j < sliders.length; j++) {
+            total += parseInt(sliders[j].value);
+        }
+        if(total > 200) {
+            this.value -= total - 200;
+        }
+    }
+}
+```
+
+This JavaScript code gets all the sliders and adds an oninput event listener to each of them. When the user changes the value of a slider, it calculates the total value of all sliders. If the total is more than 200 (which means the user is trying to select all three sliders), it reduces the value of the current slider to keep the total at 200.
+
+This concludes a fully working implementation.

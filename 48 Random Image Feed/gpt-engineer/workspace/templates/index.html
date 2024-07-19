@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Image Display</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Random Image Display</h1>
+        <table class="table mt-5">
+            {% for row in image_rows %}
+            <tr>
+                {% for image in row %}
+                <td><img src="{{ url_for('static', filename='images/' + image) }}" class="img-fluid"></td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

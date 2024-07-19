@@ -1,0 +1,101 @@
+To achieve this, we will use Python's Flask framework to create a simple web application. We will also use HTML and CSS for the frontend. The pictures will be stored in a static folder in the project directory.
+
+Here are the core files and their purposes:
+
+1. `app.py`: This is the main Python script that runs the Flask application.
+2. `templates/index.html`: This is the HTML file that creates the webpage.
+3. `static/css/styles.css`: This is the CSS file that styles the webpage.
+4. `static/images/`: This is the directory where the images are stored.
+
+Let's start with the `app.py` file:
+
+app.py
+```python
+from flask import Flask, render_template
+import os
+import random
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    # Get list of images
+    image_names = os.listdir('static/images')
+    # Randomly shuffle the images
+    random.shuffle(image_names)
+    # Render the index.html template, passing in the images
+    return render_template('index.html', image_names=image_names)
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+
+Next, let's create the `index.html` file:
+
+templates/index.html
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Image Display</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <table>
+        {% for image in image_names %}
+        <tr>
+            <td><img src="{{ url_for('static', filename='images/' + image) }}" alt="Image"></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+```
+
+Now, let's create the `styles.css` file:
+
+static/css/styles.css
+```css
+body {
+    background-color: #f0f0f0;
+}
+
+table {
+    margin: auto;
+    width: 50%;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+```
+
+Finally, you need to place your images in the `static/images/` directory.
+
+To run the application, you need to install Flask. You can do this by creating a `requirements.txt` file:
+
+requirements.txt
+```
+Flask==1.1.2
+```
+
+Then, you can install Flask using pip:
+
+```
+pip install -r requirements.txt
+```
+
+To run the application, use the following command:
+
+```
+python app.py
+```
+
+This concludes a fully working implementation.

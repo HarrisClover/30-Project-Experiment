@@ -1,0 +1,426 @@
+These front-end code implement a split landing page that showcases the PlayStation 5 and Xbox Series X gaming consoles with buy buttons. Additionally, when hovering over one of the consoles, its width expands while the width of the other console shrinks.===============================
+Sure, I can help you create a split landing page that showcases the PlayStation 5 and Xbox Series X gaming consoles with buy buttons. When you hover over one of the consoles, its width will expand while the width of the other console will shrink. Here's a simple implementation using HTML, CSS, and a bit of JavaScript:
+
+### HTML
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Split Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="split left" id="playstation">
+            <div class="content">
+                <h1>PlayStation 5</h1>
+                <p>The best place to play.</p>
+                <button>Buy Now</button>
+            </div>
+        </div>
+        <div class="split right" id="xbox">
+            <div class="content">
+                <h1>Xbox Series X</h1>
+                <p>Power your dreams.</p>
+                <button>Buy Now</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+### CSS (styles.css)
+```css
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body, html {
+    height: 100%;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.split {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: width 0.5s ease;
+}
+
+.left {
+    background: url('playstation.jpg') no-repeat center center/cover;
+}
+
+.right {
+    background: url('xbox.jpg') no-repeat center center/cover;
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.split:hover {
+    width: 75%;
+}
+
+.split:hover ~ .split {
+    width: 25%;
+}
+```
+
+### JavaScript (script.js)
+```javascript
+const playstation = document.getElementById('playstation');
+const xbox = document.getElementById('xbox');
+
+playstation.addEventListener('mouseenter', () => {
+    playstation.style.width = '75%';
+    xbox.style.width = '25%';
+});
+
+playstation.addEventListener('mouseleave', () => {
+    playstation.style.width = '50%';
+    xbox.style.width = '50%';
+});
+
+xbox.addEventListener('mouseenter', () => {
+    xbox.style.width = '75%';
+    playstation.style.width = '25%';
+});
+
+xbox.addEventListener('mouseleave', () => {
+    xbox.style.width = '50%';
+    playstation.style.width = '50%';
+});
+```
+
+### Explanation
+1. **HTML**: The structure includes two main divs for the PlayStation 5 and Xbox Series X, each with a class of `split` and unique IDs. Each split contains a content div with a heading, a paragraph, and a button.
+
+2. **CSS**: 
+   - The `split` class sets the initial width to 50% and includes a transition for smooth resizing.
+   - Background images are set for each split.
+   - The `hover` effect on the `split` class changes the width to 75% for the hovered element and 25% for the other.
+
+3. **JavaScript**: 
+   - Event listeners are added to each split to handle the `mouseenter` and `mouseleave` events, adjusting the widths accordingly.
+
+Make sure to replace `'playstation.jpg'` and `'xbox.jpg'` with the actual paths to your images. This code will create a visually appealing split landing page with interactive hover effects.===============================
+Sure, I can help you create a split landing page that showcases the PlayStation 5 and Xbox Series X gaming consoles with buy buttons. When you hover over one of the consoles, its width will expand while the width of the other console will shrink. Here's a simple implementation using HTML, CSS, and a bit of JavaScript:
+
+### HTML
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Split Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="split left" id="playstation">
+            <div class="content">
+                <h1>PlayStation 5</h1>
+                <p>The best place to play.</p>
+                <button>Buy Now</button>
+            </div>
+        </div>
+        <div class="split right" id="xbox">
+            <div class="content">
+                <h1>Xbox Series X</h1>
+                <p>Power your dreams.</p>
+                <button>Buy Now</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+### CSS (styles.css)
+```css
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body, html {
+    height: 100%;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.split {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: width 0.5s ease;
+}
+
+.left {
+    background: url('playstation.jpg') no-repeat center center/cover;
+}
+
+.right {
+    background: url('xbox.jpg') no-repeat center center/cover;
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.split:hover {
+    width: 75%;
+}
+
+.split:hover ~ .split {
+    width: 25%;
+}
+```
+
+### JavaScript (script.js)
+```javascript
+const playstation = document.getElementById('playstation');
+const xbox = document.getElementById('xbox');
+
+playstation.addEventListener('mouseenter', () => {
+    playstation.style.width = '75%';
+    xbox.style.width = '25%';
+});
+
+playstation.addEventListener('mouseleave', () => {
+    playstation.style.width = '50%';
+    xbox.style.width = '50%';
+});
+
+xbox.addEventListener('mouseenter', () => {
+    xbox.style.width = '75%';
+    playstation.style.width = '25%';
+});
+
+xbox.addEventListener('mouseleave', () => {
+    xbox.style.width = '50%';
+    playstation.style.width = '50%';
+});
+```
+
+### Explanation
+1. **HTML**: The structure includes two main divs for the PlayStation 5 and Xbox Series X, each with a class of `split` and unique IDs. Each split contains a content div with a heading, a paragraph, and a button.
+
+2. **CSS**: 
+   - The `split` class sets the initial width to 50% and includes a transition for smooth resizing.
+   - Background images are set for each split.
+   - The `hover` effect on the `split` class changes the width to 75% for the hovered element and 25% for the other.
+
+3. **JavaScript**: 
+   - Event listeners are added to each split to handle the `mouseenter` and `mouseleave` events, adjusting the widths accordingly.
+
+Make sure to replace `'playstation.jpg'` and `'xbox.jpg'` with the actual paths to your images. This code will create a visually appealing split landing page with interactive hover effects.Please generate the codes for the three files in <Code> without any note:
+index.html:
+```html
+<Code>
+```
+end index.html
+
+style.css:
+```css
+<Code>
+```
+end style.css
+
+script.js:
+```javascript
+<Code>
+```
+end script.js===============================
+index.html:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Split Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="split left" id="playstation">
+            <div class="content">
+                <h1>PlayStation 5</h1>
+                <p>The best place to play.</p>
+                <button>Buy Now</button>
+            </div>
+        </div>
+        <div class="split right" id="xbox">
+            <div class="content">
+                <h1>Xbox Series X</h1>
+                <p>Power your dreams.</p>
+                <button>Buy Now</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+```
+end index.html
+
+style.css:
+```css
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body, html {
+    height: 100%;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.split {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: width 0.5s ease;
+}
+
+.left {
+    background: url('playstation.jpg') no-repeat center center/cover;
+}
+
+.right {
+    background: url('xbox.jpg') no-repeat center center/cover;
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.split:hover {
+    width: 75%;
+}
+
+.split:hover ~ .split {
+    width: 25%;
+}
+```
+end style.css
+
+script.js:
+```javascript
+const playstation = document.getElementById('playstation');
+const xbox = document.getElementById('xbox');
+
+playstation.addEventListener('mouseenter', () => {
+    playstation.style.width = '75%';
+    xbox.style.width = '25%';
+});
+
+playstation.addEventListener('mouseleave', () => {
+    playstation.style.width = '50%';
+    xbox.style.width = '50%';
+});
+
+xbox.addEventListener('mouseenter', () => {
+    xbox.style.width = '75%';
+    playstation.style.width = '25%';
+});
+
+xbox.addEventListener('mouseleave', () => {
+    xbox.style.width = '50%';
+    playstation.style.width = '50%';
+});
+```
+end script.js===============================

@@ -1,0 +1,204 @@
+I want a web page with a dynamic loading symbol in the middle. This dynamic symbol is the constant inversion of two triangles.Let's think step by step===============================
+Step 1: HTML Structure
+
+First, we need to create the basic structure of the web page using HTML. We will create a div element that will contain our loading symbol.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Loading Symbol</title>
+</head>
+<body>
+    <div id="loader"></div>
+</body>
+</html>
+```
+
+Step 2: CSS Styling
+
+Next, we will style our loading symbol using CSS. We will create two triangles using the border property and position them in the middle of the page. We will also add a keyframe animation to make the triangles invert.
+
+```css
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f3f3f3;
+}
+
+#loader {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid #000;
+    position: relative;
+    animation: invert 2s infinite;
+}
+
+#loader:after {
+    content: "";
+    position: absolute;
+    top: 70px;
+    left: -50px;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid #000;
+}
+
+@keyframes invert {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+    100% { transform: rotate(360deg); }
+}
+```
+
+Step 3: JavaScript
+
+In this case, we don't need any JavaScript as the animation is handled by CSS.
+
+Now, when you open this page in a web browser, you should see a dynamic loading symbol in the middle of the page. The symbol is two triangles that constantly invert due to the CSS animation.===============================
+Step 1: HTML Structure
+
+First, we need to create the basic structure of the web page using HTML. We will create a div element that will contain our loading symbol.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Loading Symbol</title>
+</head>
+<body>
+    <div id="loader"></div>
+</body>
+</html>
+```
+
+Step 2: CSS Styling
+
+Next, we will style our loading symbol using CSS. We will create two triangles using the border property and position them in the middle of the page. We will also add a keyframe animation to make the triangles invert.
+
+```css
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f3f3f3;
+}
+
+#loader {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid #000;
+    position: relative;
+    animation: invert 2s infinite;
+}
+
+#loader:after {
+    content: "";
+    position: absolute;
+    top: 70px;
+    left: -50px;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid #000;
+}
+
+@keyframes invert {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+    100% { transform: rotate(360deg); }
+}
+```
+
+Step 3: JavaScript
+
+In this case, we don't need any JavaScript as the animation is handled by CSS.
+
+Now, when you open this page in a web browser, you should see a dynamic loading symbol in the middle of the page. The symbol is two triangles that constantly invert due to the CSS animation.Please generate the codes for the three files in <Code> without any note:
+index.html:
+```html
+<Code>
+```
+end index.html
+
+style.css:
+```css
+<Code>
+```
+end style.css
+
+script.js:
+```javascript
+<Code>
+```
+end script.js===============================
+index.html:
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Loading Symbol</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="loader"></div>
+</body>
+</html>
+```
+end index.html
+
+style.css:
+```css
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f3f3f3;
+}
+
+#loader {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid #000;
+    position: relative;
+    animation: invert 2s infinite;
+}
+
+#loader:after {
+    content: "";
+    position: absolute;
+    top: 70px;
+    left: -50px;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid #000;
+}
+
+@keyframes invert {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+    100% { transform: rotate(360deg); }
+}
+```
+end style.css
+
+script.js:
+```javascript
+// No JavaScript code needed for this task
+```
+end script.js===============================

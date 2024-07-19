@@ -1,0 +1,47 @@
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.hidden {
+    display: none;
+}
+
+.game-container {
+    text-align: center;
+}
+
+.start-screen, .insect-selection, .game-screen, .message {
+    margin: 20px;
+}
+
+.insects {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.insect-btn {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.game-area {
+    position: relative;
+    width: 80vw;
+    height: 60vh;
+    border: 2px solid #000;
+    margin: 20px auto;
+    background-color: #fff;
+}
+
+.insect {
+    position: absolute;
+    cursor: pointer;
+}

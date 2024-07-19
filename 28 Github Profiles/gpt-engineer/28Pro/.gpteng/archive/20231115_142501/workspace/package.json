@@ -1,0 +1,21 @@
+{
+  "name": "github-user-search",
+  "version": "1.0.0",
+  "description": "A Github user search application built with React.js",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3"
+  },
+  "devDependencies": {},
+  "keywords": ["react", "github", "search"],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Image Display</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Random Image Display</h1>
+        <table class="table mt-5">
+            <tbody>
+                {% for image_file in image_files %}
+                <tr>
+                    <td>
+                        <img src="{{ url_for('static', filename='images/' + image_file) }}" alt="Image" style="width: 200px;">
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

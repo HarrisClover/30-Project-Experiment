@@ -1,0 +1,41 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background: #007BFF;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+#eventDisplay {
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    width: 80%;
+    max-width: 600px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+#eventDisplay div {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #007BFF;
+    color: #ffffff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

@@ -1,0 +1,14 @@
+
+#sliderContainer {
+    width: 300px;
+    margin: 50px auto;
+}
+
+#slider {
+    width: 100%;
+}
+
+#sliderValue {
+    text-align: center;
+    font-size: 20px;
+}

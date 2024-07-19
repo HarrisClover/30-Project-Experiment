@@ -1,0 +1,13 @@
+.faq-section {
+    width: 50%;
+    margin: auto;
+}
+
+.faq-question {
+    cursor: pointer;
+}
+
+.faq-answer {
+    display: none;
+    margin-left: 20px;
+}

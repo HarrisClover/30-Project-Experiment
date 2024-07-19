@@ -1,0 +1,30 @@
+Task:
+This web code implements a simple 'Catch the Insect' game where players need to click on randomly generated insects to increase their score while the timer keeps track of the game time. The game provides an option to select the type of insect and displays a message when the player's score reaches a certain threshold.
+
+Config:
+ChatEnvConfig.clear_structure: True
+ChatEnvConfig.git_management: False
+ChatEnvConfig.gui_design: True
+
+
+Roster:
+Chief Executive Officer, Counselor, Chief Human Resource Officer, Chief Product Officer, Chief Technology Officer, Programmer, Code Reviewer, Software Test Engineer, Chief Creative Officer
+
+Modality:
+website
+
+Ideas:
+
+
+Language:
+ Python
+
+Code_Version:
+4.0
+
+Proposed_images:
+0
+
+Incorporated_images:
+0
+

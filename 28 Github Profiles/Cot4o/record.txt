@@ -1,0 +1,414 @@
+This front-end code implements a Github user search  application where users can enter a Github username  in the input field and view the user's basic information  and repository list.===============================
+Sure, I can help you with that! Below is a simple implementation of a GitHub user search application using HTML, CSS, and JavaScript. This application will allow users to enter a GitHub username and view the user's basic information and repository list.
+
+### HTML (index.html)
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub User Search</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>GitHub User Search</h1>
+        <input type="text" id="username" placeholder="Enter GitHub username">
+        <button onclick="searchUser()">Search</button>
+        <div id="user-info"></div>
+        <div id="repo-list"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+### CSS (styles.css)
+```css
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#user-info, #repo-list {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.repo {
+    background: #f9f9f9;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+```
+
+### JavaScript (script.js)
+```javascript
+async function searchUser() {
+    const username = document.getElementById('username').value;
+    if (!username) {
+        alert('Please enter a GitHub username');
+        return;
+    }
+
+    const userInfoDiv = document.getElementById('user-info');
+    const repoListDiv = document.getElementById('repo-list');
+
+    userInfoDiv.innerHTML = 'Loading...';
+    repoListDiv.innerHTML = '';
+
+    try {
+        const userResponse = await fetch(`https://api.github.com/users/${username}`);
+        if (!userResponse.ok) {
+            throw new Error('User not found');
+        }
+        const userData = await userResponse.json();
+
+        userInfoDiv.innerHTML = `
+            <h2>${userData.name} (${userData.login})</h2>
+            <img src="${userData.avatar_url}" alt="${userData.login}" width="100">
+            <p>${userData.bio}</p>
+            <p>Followers: ${userData.followers} - Following: ${userData.following}</p>
+            <p>Public Repos: ${userData.public_repos}</p>
+        `;
+
+        const repoResponse = await fetch(userData.repos_url);
+        const repoData = await repoResponse.json();
+
+        repoData.forEach(repo => {
+            const repoDiv = document.createElement('div');
+            repoDiv.className = 'repo';
+            repoDiv.innerHTML = `
+                <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
+                <p>${repo.description}</p>
+            `;
+            repoListDiv.appendChild(repoDiv);
+        });
+    } catch (error) {
+        userInfoDiv.innerHTML = 'User not found';
+    }
+}
+```
+
+### Explanation
+1. **HTML**: The HTML file contains a simple structure with an input field for the GitHub username, a search button, and two divs to display user information and the repository list.
+2. **CSS**: The CSS file styles the application, making it look clean and centered on the page.
+3. **JavaScript**: The JavaScript file contains the `searchUser` function, which is triggered when the search button is clicked. It fetches the user information and repositories from the GitHub API and displays them on the page.
+
+To run this application, simply create the three files (`index.html`, `styles.css`, and `script.js`) in the same directory and open `index.html` in a web browser.===============================
+Sure, I can help you with that! Below is a simple implementation of a GitHub user search application using HTML, CSS, and JavaScript. This application will allow users to enter a GitHub username and view the user's basic information and repository list.
+
+### HTML (index.html)
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub User Search</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>GitHub User Search</h1>
+        <input type="text" id="username" placeholder="Enter GitHub username">
+        <button onclick="searchUser()">Search</button>
+        <div id="user-info"></div>
+        <div id="repo-list"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+### CSS (styles.css)
+```css
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#user-info, #repo-list {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.repo {
+    background: #f9f9f9;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+```
+
+### JavaScript (script.js)
+```javascript
+async function searchUser() {
+    const username = document.getElementById('username').value;
+    if (!username) {
+        alert('Please enter a GitHub username');
+        return;
+    }
+
+    const userInfoDiv = document.getElementById('user-info');
+    const repoListDiv = document.getElementById('repo-list');
+
+    userInfoDiv.innerHTML = 'Loading...';
+    repoListDiv.innerHTML = '';
+
+    try {
+        const userResponse = await fetch(`https://api.github.com/users/${username}`);
+        if (!userResponse.ok) {
+            throw new Error('User not found');
+        }
+        const userData = await userResponse.json();
+
+        userInfoDiv.innerHTML = `
+            <h2>${userData.name} (${userData.login})</h2>
+            <img src="${userData.avatar_url}" alt="${userData.login}" width="100">
+            <p>${userData.bio}</p>
+            <p>Followers: ${userData.followers} - Following: ${userData.following}</p>
+            <p>Public Repos: ${userData.public_repos}</p>
+        `;
+
+        const repoResponse = await fetch(userData.repos_url);
+        const repoData = await repoResponse.json();
+
+        repoData.forEach(repo => {
+            const repoDiv = document.createElement('div');
+            repoDiv.className = 'repo';
+            repoDiv.innerHTML = `
+                <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
+                <p>${repo.description}</p>
+            `;
+            repoListDiv.appendChild(repoDiv);
+        });
+    } catch (error) {
+        userInfoDiv.innerHTML = 'User not found';
+    }
+}
+```
+
+### Explanation
+1. **HTML**: The HTML file contains a simple structure with an input field for the GitHub username, a search button, and two divs to display user information and the repository list.
+2. **CSS**: The CSS file styles the application, making it look clean and centered on the page.
+3. **JavaScript**: The JavaScript file contains the `searchUser` function, which is triggered when the search button is clicked. It fetches the user information and repositories from the GitHub API and displays them on the page.
+
+To run this application, simply create the three files (`index.html`, `styles.css`, and `script.js`) in the same directory and open `index.html` in a web browser.Please generate the codes for the three files in <Code> without any note:
+index.html:
+```html
+<Code>
+```
+end index.html
+
+styles.css:
+```css
+<Code>
+```
+end style.css
+
+script.js:
+```javascript
+<Code>
+```
+end script.js===============================
+index.html:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub User Search</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>GitHub User Search</h1>
+        <input type="text" id="username" placeholder="Enter GitHub username">
+        <button onclick="searchUser()">Search</button>
+        <div id="user-info"></div>
+        <div id="repo-list"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+```
+end index.html
+
+styles.css:
+```css
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#user-info, #repo-list {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.repo {
+    background: #f9f9f9;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+```
+end styles.css
+
+script.js:
+```javascript
+async function searchUser() {
+    const username = document.getElementById('username').value;
+    if (!username) {
+        alert('Please enter a GitHub username');
+        return;
+    }
+
+    const userInfoDiv = document.getElementById('user-info');
+    const repoListDiv = document.getElementById('repo-list');
+
+    userInfoDiv.innerHTML = 'Loading...';
+    repoListDiv.innerHTML = '';
+
+    try {
+        const userResponse = await fetch(`https://api.github.com/users/${username}`);
+        if (!userResponse.ok) {
+            throw new Error('User not found');
+        }
+        const userData = await userResponse.json();
+
+        userInfoDiv.innerHTML = `
+            <h2>${userData.name} (${userData.login})</h2>
+            <img src="${userData.avatar_url}" alt="${userData.login}" width="100">
+            <p>${userData.bio}</p>
+            <p>Followers: ${userData.followers} - Following: ${userData.following}</p>
+            <p>Public Repos: ${userData.public_repos}</p>
+        `;
+
+        const repoResponse = await fetch(userData.repos_url);
+        const repoData = await repoResponse.json();
+
+        repoData.forEach(repo => {
+            const repoDiv = document.createElement('div');
+            repoDiv.className = 'repo';
+            repoDiv.innerHTML = `
+                <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
+                <p>${repo.description}</p>
+            `;
+            repoListDiv.appendChild(repoDiv);
+        });
+    } catch (error) {
+        userInfoDiv.innerHTML = 'User not found';
+    }
+}
+```
+end script.js===============================

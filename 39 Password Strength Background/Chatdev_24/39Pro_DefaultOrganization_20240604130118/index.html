@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Input Interface</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>Password Input Interface</h1>
+    <div class="password-container">
+        <label for="password">Password:</label>
+        <input type="password" id="password" oninput="checkPasswordStrength(this.value)">
+        <div id="password-strength"></div>
+        <div id="password-strength-label"></div>
+    </div>
+</body>
+</html>

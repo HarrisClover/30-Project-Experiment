@@ -1,0 +1,28 @@
+
+.container {
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#verification-form {
+    margin-top: 20px;
+}
+
+#verification-code {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#message {
+    margin-top: 20px;
+}

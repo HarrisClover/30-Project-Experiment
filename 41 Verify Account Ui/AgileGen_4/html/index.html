@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Your Email</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Verify Your Email Address</h1>
+        <h2>Please enter the 6-digit verification code sent to cool_guy@email.com.</h2>
+        <div id="codeInput">
+            <input type="text" maxlength="1" class="code-box">
+            <input type="text" maxlength="1" class="code-box">
+            <input type="text" maxlength="1" class="code-box">
+            <input type="text" maxlength="1" class="code-box">
+            <input type="text" maxlength="1" class="code-box">
+            <input type="text" maxlength="1" class="code-box">
+        </div>
+        <button onclick="verifyCode()">Submit</button>
+        <p id="message"></p>
+        <div class="resend">
+            <p>Didn't receive the code?</p>
+            <button onclick="resendCode()">Resend Code</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

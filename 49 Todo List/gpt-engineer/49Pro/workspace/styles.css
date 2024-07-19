@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+#new-task {
+    width: 70%;
+    padding: 10px;
+}
+
+#add-task {
+    width: 25%;
+    padding: 10px;
+    background-color: #5C6BC0;
+    color: white;
+    border: none;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #ECEFF1;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+li.completed {
+    text-decoration: line-through;
+}
+
+.delete {
+    background-color: #EF5350;
+    color: white;
+    border: none;
+    padding: 5px;
+}

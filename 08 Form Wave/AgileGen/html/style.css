@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 50px;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#loginForm {
+    width: 300px;
+    margin: 0 auto;
+}
+
+#loginForm input {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+#loginForm button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#loginForm button:hover {
+    background-color: #0056b3;
+}
+
+#message {
+    color: red;
+    margin-top: 10px;
+}

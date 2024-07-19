@@ -1,0 +1,33 @@
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin: 10px 0;
+    width: 200px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#user-info {
+    margin: 20px 0;
+}
+
+#repo-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#repo-list li {
+    padding: 5px;
+    background-color: #f8f9fa;
+    margin-bottom: 10px;
+}

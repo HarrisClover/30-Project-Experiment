@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Frequently Asked Questions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Frequently Asked Questions</h1>
+        <div class="faq-container">
+            <div class="faq-card">
+                <div class="question" onclick="toggleAnswer(this)">
+                    What services do you offer?<span class="arrow">&#9662;</span>
+                </div>
+                <div class="answer">
+                    We offer a variety of services including web development, digital marketing, and graphic design.
+                </div>
+            </div>
+            <div class="faq-card">
+                <div class="question" onclick="toggleAnswer(this)">
+                    How can I contact customer support?<span class="arrow">&#9662;</span>
+                </div>
+                <div class="answer">
+                    You can contact our customer support via email at support@example.com or call us at +123456789.
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Your Company Name. All rights reserved.</p>
+        <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

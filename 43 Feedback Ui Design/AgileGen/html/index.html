@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Support Feedback System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="header">Submit Your Satisfaction Level</h1>
+    <p class="instruction">Please rate your experience with our services.</p>
+    <div class="stars">
+        <!-- Replace "star.png" with your preferred star image link -->
+        <img src="star.png" alt="1 star" data-rating="1">
+        <img src="star.png" alt="2 stars" data-rating="2">
+        <img src="star.png" alt="3 stars" data-rating="3">
+        <img src="star.png" alt="4 stars" data-rating="4">
+        <img src="star.png" alt="5 stars" data-rating="5">
+    </div>
+    <textarea class="feedback-text" placeholder="Share your thoughts about our services."></textarea>
+    <button class="submit-button">Submit</button>
+    <div class="confirmation-message">Thank you for submitting your feedback!</div>
+</div>
+
+<div class="container">
+    <h1 class="header">Customer Satisfaction Feedback</h1>
+    <h2 class="subheader">Discover how our customers rate their experiences with our services.</h2>
+    <div class="feedback-list"></div>
+</div>
+<script src="feedback.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">NotesApp</a>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">My Notes</a></li>
+                <li><a href="#" class="active">New Note</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Create a New Note</h1>
+        <button id="new-note-btn">New Note</button>
+        <div class="note-editor">
+            <div class="toolbar">
+                <button onclick="format('bold')">Bold</button>
+                <button onclick="format('italic')">Italic</button>
+                <button onclick="format('underline')">Underline</button>
+                <button onclick="format('insertUnorderedList')">Bullet Points</button>
+            </div>
+            <div id="text-area" contenteditable="true"></div>
+            <button id="save-note-btn">Save Note</button>
+        </div>
+    </main>
+    <footer>
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy Policy</a>
+        <p>&copy; 2023 NotesApp</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

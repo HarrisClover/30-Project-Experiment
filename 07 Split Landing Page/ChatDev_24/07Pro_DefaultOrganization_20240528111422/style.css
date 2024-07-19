@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.console {
+    width: 50%;
+    transition: width 0.3s;
+}
+.console:hover {
+    width: 60%;
+}
+#playstation {
+    background-color: #003791;
+    color: #fff;
+}
+#xbox {
+    background-color: #107C10;
+    color: #fff;
+}
+h2 {
+    margin-top: 0;
+}
+.buy-button {
+    margin-top: 10px;
+}

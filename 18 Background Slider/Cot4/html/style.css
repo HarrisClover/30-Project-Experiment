@@ -1,0 +1,14 @@
+
+.gallery {
+    display: flex;
+    overflow: hidden;
+}
+
+.gallery-img {
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+#prev, #next {
+    margin: 10px;
+}

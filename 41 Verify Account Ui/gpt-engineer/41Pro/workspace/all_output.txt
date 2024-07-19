@@ -1,0 +1,119 @@
+To implement this task, we will use Flask, a micro web framework written in Python. We will also use the smtplib for sending emails in Python. The project will be structured as follows:
+
+- A main application file that will serve as the entry point of our application.
+- A templates directory that will contain our HTML templates.
+- A static directory that will contain our CSS files for styling.
+- A requirements.txt file that will list all the Python dependencies that our project needs.
+
+Let's start with the main application file:
+
+app.py
+```python
+from flask import Flask, render_template, request, redirect, url_for, flash
+import smtplib
+import random
+
+app = Flask(__name__)
+app.secret_key = 'supersecretkey'
+
+@app.route('/', methods=['GET', 'POST'])
+def home():
+    if request.method == 'POST':
+        email = request.form['email']
+        code = generate_verification_code()
+        send_email(email, code)
+        flash('A verification code has been sent to your email address.', 'info')
+        return redirect(url_for('verify', email=email))
+    return render_template('home.html')
+
+@app.route('/verify', methods=['GET', 'POST'])
+def verify():
+    if request.method == 'POST':
+        code = request.form['code']
+        if code == request.args.get('code'):
+            flash('Email verified successfully.', 'success')
+            return redirect(url_for('home'))
+        else:
+            flash('Invalid verification code.', 'danger')
+            return redirect(url_for('verify'))
+    return render_template('verify.html')
+
+def generate_verification_code():
+    return ''.join(random.choice('0123456789') for _ in range(6))
+
+def send_email(to, code):
+    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server.starttls()
+    server.login('your-email@gmail.com', 'your-password')
+    message = 'Your verification code is: {}'.format(code)
+    server.sendmail('your-email@gmail.com', to, message)
+    server.quit()
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+
+Next, let's create our HTML templates:
+
+templates/home.html
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verification Code</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <form method="POST">
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <button type="submit">Send Verification Code</button>
+    </form>
+</body>
+</html>
+```
+
+templates/verify.html
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verify Email</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <form method="POST">
+        <input type="text" name="code" placeholder="Enter verification code" required>
+        <button type="submit">Verify</button>
+    </form>
+</body>
+</html>
+```
+
+Next, let's create our CSS file:
+
+static/style.css
+```css
+body {
+    font-family: Arial, sans-serif;
+}
+
+form {
+    width: 300px;
+    margin: 0 auto;
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+```
+
+Finally, let's create our requirements.txt file:
+
+requirements.txt
+```
+Flask==1.1.2
+```
+
+This concludes a fully working implementation.

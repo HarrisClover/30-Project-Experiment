@@ -1,0 +1,13 @@
+#testimonial-box {
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+#testimonial-content {
+  margin-bottom: 20px;
+}
+#testimonial-buttons button {
+  margin: 0 5px;
+}

@@ -1,0 +1,3 @@
+smtplib==3.4.2
+tkinter==8.6
+secrets==3.3.0

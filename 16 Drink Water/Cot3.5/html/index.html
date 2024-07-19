@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Water Tracker</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>Water Tracker</h1>
+    <div id="glass-icons">
+        <div class="glass-icon" onclick="logWater(8)"></div>
+        <div class="glass-icon" onclick="logWater(16)"></div>
+        <div class="glass-icon" onclick="logWater(24)"></div>
+        <div class="glass-icon" onclick="logWater(32)"></div>
+        <div class="glass-icon" onclick="logCustomWater()"></div>
+    </div>
+    <div id="tracker">
+        <div id="progress-bar"></div>
+        <div id="progress-text"></div>
+    </div>
+    <div id="daily-goal">
+        <label for="goal-input">Set Daily Goal:</label>
+        <input type="number" id="goal-input" min="0">
+        <button onclick="setGoal()">Set</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

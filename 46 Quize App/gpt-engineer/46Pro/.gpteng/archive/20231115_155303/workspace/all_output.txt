@@ -1,0 +1,159 @@
+To implement this, we will use Flask, a Python micro web framework, along with HTML, CSS, and JavaScript for the frontend. We will also use SQLAlchemy as our ORM to interact with the database where we will store our questions and answers.
+
+Here are the core classes and functions we will need:
+
+1. `app.py`: This is the entry point of our application. It will contain the Flask application instance and the routes for our website.
+
+2. `models.py`: This file will contain the SQLAlchemy models for our database tables.
+
+3. `forms.py`: This file will contain the WTForms form definitions for our question form.
+
+4. `templates/`: This directory will contain our HTML templates.
+
+5. `static/`: This directory will contain our static files like CSS and JavaScript.
+
+6. `requirements.txt`: This file will list all the Python dependencies needed for our project.
+
+Let's start with the `requirements.txt` file:
+
+requirements.txt
+```
+Flask==1.1.2
+Flask-SQLAlchemy==2.4.4
+Flask-WTF==0.14.3
+```
+
+Next, we will define our database models in `models.py`:
+
+models.py
+```python
+from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
+
+class Question(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    question_text = db.Column(db.String(200), nullable=False)
+    correct_answer = db.Column(db.String(200), nullable=False)
+    option_1 = db.Column(db.String(200), nullable=False)
+    option_2 = db.Column(db.String(200), nullable=False)
+    option_3 = db.Column(db.String(200), nullable=False)
+    option_4 = db.Column(db.String(200), nullable=False)
+```
+
+Next, we will define our form in `forms.py`:
+
+forms.py
+```python
+from flask_wtf import FlaskForm
+from wtforms import StringField, RadioField, SubmitField
+from wtforms.validators import DataRequired
+
+class QuestionForm(FlaskForm):
+    answer = RadioField('Answer', choices=[], validators=[DataRequired()])
+    submit = SubmitField('Submit')
+```
+
+Next, we will define our Flask application and routes in `app.py`:
+
+app.py
+```python
+from flask import Flask, render_template, request, redirect, url_for
+from models import db, Question
+from forms import QuestionForm
+
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
+app.config['SECRET_KEY'] = 'secret'
+db.init_app(app)
+
+@app.route('/', methods=['GET', 'POST'])
+def home():
+    form = QuestionForm()
+    question = Question.query.order_by(func.random()).first()
+    if question:
+        form.answer.choices = [(question.option_1, question.option_1), 
+                               (question.option_2, question.option_2), 
+                               (question.option_3, question.option_3), 
+                               (question.option_4, question.option_4)]
+    if form.validate_on_submit():
+        if form.answer.data == question.correct_answer:
+            return redirect(url_for('correct'))
+        else:
+            return redirect(url_for('incorrect'))
+    return render_template('home.html', form=form, question=question)
+
+@app.route('/correct')
+def correct():
+    return render_template('correct.html')
+
+@app.route('/incorrect')
+def incorrect():
+    return render_template('incorrect.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+
+Next, we will create our HTML templates in the `templates/` directory:
+
+templates/home.html
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Computer Quiz</title>
+</head>
+<body>
+    <h1>{{ question.question_text }}</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.answer }}
+        {{ form.submit() }}
+    </form>
+</body>
+</html>
+```
+
+templates/correct.html
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Correct Answer</title>
+</head>
+<body>
+    <h1>Correct!</h1>
+    <a href="{{ url_for('home') }}">Next Question</a>
+</body>
+</html>
+```
+
+templates/incorrect.html
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Incorrect Answer</title>
+</head>
+<body>
+    <h1>Incorrect!</h1>
+    <a href="{{ url_for('home') }}">Next Question</a>
+</body>
+</html>
+```
+
+Finally, we will add some CSS in the `static/` directory:
+
+static/style.css
+```css
+body {
+    font-family: Arial, sans-serif;
+}
+
+form {
+    margin-top: 20px;
+}
+```
+
+This concludes a fully working implementation.

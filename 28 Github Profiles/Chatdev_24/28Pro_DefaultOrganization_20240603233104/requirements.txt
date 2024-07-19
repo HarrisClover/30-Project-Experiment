@@ -1,0 +1,5 @@
+
+In this example, Axios is added as a dependency with version "^0.21.1", which means any version greater than or equal to 0.21.1 will be installed.
+
+To install the dependencies specified in the package.json file, you can run the following command in the project directory:
+

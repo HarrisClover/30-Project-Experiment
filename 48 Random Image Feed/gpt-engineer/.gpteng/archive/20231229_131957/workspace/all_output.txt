@@ -1,0 +1,76 @@
+To achieve this, we will use Python with Flask as the web framework and Jinja2 for the template engine. We will also use Bootstrap to style the table. 
+
+Here are the core classes, functions, and methods that will be necessary:
+
+1. `app.py`: This is the main entry point of our application. It will contain the Flask application and the route to our web page.
+
+2. `templates/index.html`: This is the Jinja2 template for our web page. It will contain the HTML and Jinja2 code to display the pictures in a table.
+
+3. `static/images/`: This directory will contain the images that we want to display.
+
+4. `requirements.txt`: This file will contain the Python dependencies that need to be installed for the application to run.
+
+Let's start with the `app.py` file:
+
+app.py
+```python
+from flask import Flask, render_template
+import os
+import random
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    # Get a list of all the image files in the static/images directory
+    image_files = os.listdir('static/images')
+
+    # Randomly shuffle the list of image files
+    random.shuffle(image_files)
+
+    # Render the index.html template, passing in the image_files
+    return render_template('index.html', image_files=image_files)
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+
+Next, let's create the `index.html` template:
+
+templates/index.html
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Image Display</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Random Image Display</h1>
+        <table class="table mt-5">
+            <tbody>
+                {% for image_file in image_files %}
+                <tr>
+                    <td>
+                        <img src="{{ url_for('static', filename='images/' + image_file) }}" alt="Image" style="width: 200px;">
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+```
+
+Finally, let's create the `requirements.txt` file:
+
+requirements.txt
+```
+Flask==1.1.2
+```
+
+To run the application, first install the dependencies with `pip install -r requirements.txt`, then run `python app.py`. The application will be available at `http://localhost:5000`.
+
+This concludes a fully working implementation.

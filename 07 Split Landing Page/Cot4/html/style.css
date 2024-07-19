@@ -1,0 +1,39 @@
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.split {
+  width: 50%;
+  position: relative;
+  overflow: hidden;
+  transition: width 0.8s ease;
+}
+
+.left {
+  background: url('ps5.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.right {
+  background: url('xbox.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.left:hover {
+  width: 75%;
+}
+
+.right:hover {
+  width: 25%;
+}
+
+h1, p, button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

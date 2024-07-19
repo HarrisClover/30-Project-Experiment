@@ -1,0 +1,31 @@
+<!--
+The index.html file is responsible for displaying the random images in a table format.
+The table CSS styles have been added to provide a border around the images.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Image Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Image Table</h1>
+    <table>
+        {% for image_file in image_files %}
+        <tr>
+            <td>
+                <img src="{{ url_for('static', filename='images/' + image_file) }}" alt="Image">
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
