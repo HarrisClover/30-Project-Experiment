@@ -1,0 +1,69 @@
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: white; /* Light mode by default */
+    transition: background-color 0.3s;
+}
+
+.clock-container {
+    text-align: center;
+}
+
+.clock {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 10px solid black;
+    border-radius: 50%;
+    margin: 50px auto;
+}
+
+.hand {
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    background: black;
+    top: 50%;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    transition: transform 0.1s cubic-bezier(0.4, 2.3, 0.3, 1);
+}
+
+.hour-hand {
+    height: 4px;
+}
+
+.time-display {
+    margin-top: 20px;
+    font-size: 1.5em;
+}
+
+.mode-switch {
+    margin-top: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Dark mode styles */
+.dark-mode {
+    background-color: #333;
+    color: white;
+}
+
+.dark-mode .clock {
+    border-color: white;
+}
+
+.dark-mode .hand {
+    background: white;
+}
+
+.dark-mode .mode-switch {
+    background-color: #555;
+    color: white;
+    border: none;
+}

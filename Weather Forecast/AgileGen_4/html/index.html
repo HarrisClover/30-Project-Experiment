@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Weather Tracker</h1>
+    </header>
+    <main>
+        <div class="search-panel">
+            <input type="text" id="cityInput" placeholder="Enter city name">
+            <input type="date" id="datePicker">
+            <select id="unitsDropdown">
+                <option value="Celsius">Celsius</option>
+                <option value="Fahrenheit">Fahrenheit</option>
+            </select>
+            <button id="searchButton">Search</button>
+        </div>
+        <div class="display-area">
+            <div id="weatherDisplay"></div>
+        </div>
+    </main>
+    <footer>
+        <p>Credits: Data provided by WeatherAPI</p>
+        <p>Disclaimer: Data accuracy is not guaranteed.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

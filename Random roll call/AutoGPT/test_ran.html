@@ -1,0 +1,18 @@
+<!DOCTYPE html>\n<html>\n
+
+<head>
+    <script src="random_roll_call.js"></script>
+    <script> 
+    function testRandomRollCall() {
+        const participants = ['Alice', 'Bob', 'Charlie'];
+        const selectedParticipant = randomRollCall(participants);
+        document.getElementById('result').innerText = selectedParticipant; 
+    } 
+    </script>
+</head>
+
+<body>
+    <button onclick="testRandomRollCall()">Random Roll Call</button>\n <p id="result"></p>
+</body>
+
+</html>

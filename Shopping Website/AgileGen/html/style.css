@@ -1,0 +1,108 @@
+/* Add your CSS styles here */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+main {
+  padding: 20px;
+}
+
+.featured-items {
+  margin-bottom: 20px;
+}
+
+.featured-items h2 {
+  margin-bottom: 10px;
+}
+
+.featured-items ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.featured-items li {
+  width: 200px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.item {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.item-image img {
+  width: 100%;
+  height: auto;
+}
+
+.item-details h3 {
+  margin-top: 0;
+}
+
+.search-bar input[type="text"] {
+  padding: 5px;
+  width: 200px;
+}
+
+.search-bar button {
+  padding: 5px 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+footer ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+footer ul li {
+  margin-right: 10px;
+}
+
+footer ul li a {
+  color: #fff;
+  text-decoration: none;
+}

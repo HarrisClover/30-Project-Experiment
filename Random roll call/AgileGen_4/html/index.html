@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher's Class Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Teacher's Class Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Class List</a></li>
+                <li><a href="#">Roll Call</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="class-list-management">
+            <h2>Class List Management</h2>
+            <div id="add-student">
+                <h3>Add Student</h3>
+                <input type="text" id="student-name" placeholder="Enter Student Name">
+                <button onclick="addStudent()">Add</button>
+                <p id="add-message"></p>
+            </div>
+            <div id="remove-student">
+                <h3>Remove Student</h3>
+                <select id="student-list"></select>
+                <button onclick="removeStudent()">Remove</button>
+                <p id="remove-message"></p>
+            </div>
+        </section>
+        <section id="random-roll-call">
+            <h2>Random Roll Call</h2>
+            <button onclick="rollCall()">Roll Call</button>
+            <p id="selected-student">Selected Student: </p>
+            <div id="exclusion-list">
+                <h3>Exclusion List</h3>
+                <div id="exclusion-checkboxes"></div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+        </ul>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
